@@ -1,0 +1,2 @@
+addpath("e:/openEMS/matlab/");
+addpath("e:/openEMS/hyp2mat/matlab/");
