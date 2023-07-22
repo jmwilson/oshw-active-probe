@@ -10,7 +10,7 @@ components = {
 	struct('name', 'R6',  'orientation', 'y', 'value', 66.5e3),
 	struct('name', 'R10', 'orientation', 'x', 'value', 10e6),
 	% Capacitors
-	struct('name', 'C8', 'orientation', 'x', 'value', 2.2e-12),
+	struct('name', 'C8', 'orientation', 'y', 'value', 2.2e-12),
 	struct('name', 'C6', 'orientation', 'x', 'value', 1.2e-12),
 	struct('name', 'C1', 'orientation', 'x', 'value', 330e-12)
 };
@@ -133,8 +133,8 @@ mesh.y = mesh.y(logical([1, diff(mesh.y) >= grid_duplicate_threshold]));
 mesh.z = mesh.z(logical([1, diff(mesh.z) >= grid_duplicate_threshold]));
 
 % Detail box
-detail_x = [0.008, 0.016];
-detail_y = [0.0116, 0.0159];
+detail_x = [0.0075, 0.016];
+detail_y = [0.0116, 0.0194];
 mesh.x = [mesh.x, SmoothMeshLines([mesh.x(logical(detail_x(1) <= mesh.x & mesh.x <= detail_x(2))), detail_x], fine_resolution)];
 mesh.y = [mesh.y, SmoothMeshLines([mesh.y(logical(detail_y(1) <= mesh.y & mesh.y <= detail_y(2))), detail_y], fine_resolution)];
 
