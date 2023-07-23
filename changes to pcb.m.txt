@@ -1,1 +1,11 @@
 Change priority on ground_cutout to be > 200
+Fix board outline:
+	pgon = [];
+	pgon(:, end+1) = [0;0.02];
+	pgon(:, end+1) = [0;0.015];
+	pgon(:, end+1) = [0.008;0.0125];
+	pgon(:, end+1) = [0.008;0.0075];
+	pgon(:, end+1) = [0.0141;0.0075];
+	pgon(:, end+1) = [0.0216;0];
+	pgon(:, end+1) = [0.029;0];
+	pgon(:, end+1) = [0.029;0.02];

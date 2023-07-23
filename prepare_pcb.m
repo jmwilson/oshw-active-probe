@@ -3,7 +3,7 @@ function [CSX, port] = prepare_pcb(CSX, excite_port)
 layer_names = {'Top', 'Ground', 'Signal/Power', 'Bottom'};
 components = {
 	% Resistors
-	struct('name', 'R1',  'orientation', 'x', 'value', 270),
+	struct('name', 'R1',  'orientation', 'x', 'value', 220),
 	struct('name', 'R2',  'orientation', 'x', 'value', 1.6e6),
 	struct('name', 'R3',  'orientation', 'y', 'value', 402e3),
 	struct('name', 'R4',  'orientation', 'y', 'value', 1.91e6),
