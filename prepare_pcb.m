@@ -11,7 +11,7 @@ components = {
 	struct('name', 'R10', 'orientation', 'x', 'value', 10e6),
 	% Capacitors
 	struct('name', 'C8', 'orientation', 'y', 'value', 2.2e-12),
-	struct('name', 'C6', 'orientation', 'x', 'value', 1.2e-12),
+	struct('name', 'C6', 'orientation', 'x', 'value', 1e-12),
 	struct('name', 'C1', 'orientation', 'x', 'value', 330e-12)
 };
 physical_constants;
