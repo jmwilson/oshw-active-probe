@@ -9,6 +9,7 @@ components = {
 	struct('name', 'R4',  'orientation', 'y', 'value', 1.91e6),
 	struct('name', 'R6',  'orientation', 'y', 'value', 66.5e3),
 	struct('name', 'R10', 'orientation', 'x', 'value', 10e6),
+	struct('name', 'R11', 'orientation', 'y', 'value', 68)
 	% Capacitors
 	struct('name', 'C8', 'orientation', 'y', 'value', 2.2e-12),
 	struct('name', 'C6', 'orientation', 'x', 'value', 1e-12),
