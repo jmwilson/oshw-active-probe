@@ -12,7 +12,7 @@ components = {
 	struct('name', 'R11', 'orientation', 'y', 'value', 68)
 	% Capacitors
 	struct('name', 'C8', 'orientation', 'y', 'value', 2.2e-12),
-	struct('name', 'C6', 'orientation', 'x', 'value', 1e-12),
+	struct('name', 'C6', 'orientation', 'x', 'value', 800e-15),
 	struct('name', 'C1', 'orientation', 'x', 'value', 330e-12)
 };
 physical_constants;
@@ -149,3 +149,11 @@ mesh.y = RecursiveSmoothMesh(mesh.y, coarse_resolution, 1.4);
 mesh.z = RecursiveSmoothMesh(mesh.z, coarse_resolution, 1.4);
 
 CSX = DefineRectGrid(CSX, 1, mesh);
+
+%% 7. Material fixup
+% eps_FR408HR = 3.68;
+% tand_FR408HR = 0.0092;
+% kappa_FR408HR = 2*pi*2e9*EPS0*eps_FR408HR*tand_FR408HR;
+% CSX = SetMaterialProperty(CSX, 'Dielectric_DE_Signal/Power', 'Epsilon', eps_FR408HR, 'Mue', 1, 'Kappa', kappa_FR408HR);
+% CSX = SetMaterialProperty(CSX, 'Dielectric_DE_Ground', 'Epsilon', eps_FR408HR, 'Mue', 1, 'Kappa', kappa_FR408HR);
+% CSX = SetMaterialProperty(CSX, 'Dielectric_DE_Top', 'Epsilon', eps_FR408HR, 'Mue', 1, 'Kappa', kappa_FR408HR);
