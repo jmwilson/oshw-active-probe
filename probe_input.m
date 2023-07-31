@@ -12,7 +12,7 @@ sparam = cell(num_ports, num_ports);
 
 FDTD = InitFDTD('EndCriteria', 1e-3);
 FDTD = SetGaussExcite(FDTD, f0, fc);
-BC   = {'MUR', 'MUR', 'MUR', 'MUR', 'MUR', 'MUR'};
+BC   = {'PML_8', 'PML_8', 'PML_8', 'PML_8', 'PML_8', 'PML_8'};
 FDTD = SetBoundaryCond(FDTD, BC);
 
 for n=1:num_ports

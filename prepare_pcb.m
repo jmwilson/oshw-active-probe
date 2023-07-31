@@ -12,12 +12,12 @@ components = {
 	struct('name', 'R11', 'orientation', 'y', 'value', 68)
 	% Capacitors
 	struct('name', 'C8', 'orientation', 'y', 'value', 2.2e-12),
-	struct('name', 'C6', 'orientation', 'x', 'value', 800e-15),
+	struct('name', 'C6', 'orientation', 'x', 'value', 700e-15),
 	struct('name', 'C1', 'orientation', 'x', 'value', 330e-12)
 };
 physical_constants;
 lambda = c0/sqrt(3.61)/3e9;
-fine_resolution = lambda/200;
+fine_resolution = lambda/80;
 coarse_resolution = lambda/40;
 grid_duplicate_threshold = 5e-5;
 air_space = 5e-3;
@@ -77,6 +77,11 @@ for n=1:numel(components)
 	mesh = AddComponentMeshLines(mesh, component_start, component_stop);
 end
 
+CSX.HyperLynxPort{end+1} = struct('ref', 'U1.2', 'xc', 0.0151, 'yc', 0.0138, 'z', 0.00139497, 'x1', 0.01472, 'y1', 0.01367, 'x2', 0.01548, 'y2', 0.01393, 'position', 'top', 'layer_name', 'Top');
+CSX.HyperLynxPort{end+1} = struct('ref', 'U1.3', 'xc', 0.0151, 'yc', 0.0133, 'z', 0.00139497, 'x1', 0.01472, 'y1', 0.01317, 'x2', 0.01548, 'y2', 0.01343, 'position', 'top', 'layer_name', 'Top');
+CSX.HyperLynxPort{end+1} = struct('ref', 'U1.17', 'xc', 0.01657, 'yc', 0.01355, 'z', 0.00139497, 'x1', 0.01573, 'y1', 0.01271, 'x2', 0.01741, 'y2', 0.01439, 'position', 'top', 'layer_name', 'Top');
+CSX.HyperLynxPort{end+1} = struct('ref', 'U2.3', 'xc', 0.0211, 'yc', 0.00867, 'z', 0.00139497, 'x1', 0.02032, 'y1', 0.00837, 'x2', 0.02188, 'y2', 0.00897, 'position', 'top', 'layer_name', 'Top');
+
 %% 4. Add probe tips
 CSX = AddMetal(CSX, 'metal');
 [pad1_material, pad1_start, pad1_stop] = GetHyperLynxPort(CSX, 'J1.1');
@@ -134,8 +139,8 @@ mesh.y = mesh.y(logical([1, diff(mesh.y) >= grid_duplicate_threshold]));
 mesh.z = mesh.z(logical([1, diff(mesh.z) >= grid_duplicate_threshold]));
 
 % Detail box
-% detail_x = [0.0075, 0.016];
-% detail_y = [0.0116, 0.0194];
+% detail_x = [0.00607, 0.0211];
+% detail_y = [0.00729018, 0.01954];
 % mesh.x = [mesh.x, SmoothMeshLines([mesh.x(logical(detail_x(1) <= mesh.x & mesh.x <= detail_x(2))), detail_x], fine_resolution)];
 % mesh.y = [mesh.y, SmoothMeshLines([mesh.y(logical(detail_y(1) <= mesh.y & mesh.y <= detail_y(2))), detail_y], fine_resolution)];
 
@@ -144,9 +149,11 @@ mesh.z = mesh.z(logical([1, diff(mesh.z) >= grid_duplicate_threshold]));
 % mesh.x = [mesh.x, SmoothMeshLines([mesh.x(logical(detail_x(1) <= mesh.x & mesh.x <= detail_x(2))), detail_x], fine_resolution)];
 % mesh.y = [mesh.y, SmoothMeshLines([mesh.y(logical(detail_y(1) <= mesh.y & mesh.y <= detail_y(2))), detail_y], fine_resolution)];
 
-mesh.x = RecursiveSmoothMesh(mesh.x, coarse_resolution, 1.4);
-mesh.y = RecursiveSmoothMesh(mesh.y, coarse_resolution, 1.4);
-mesh.z = RecursiveSmoothMesh(mesh.z, coarse_resolution, 1.4);
+mesh.x = RecursiveSmoothMesh(mesh.x, coarse_resolution, 1.3);
+mesh.y = RecursiveSmoothMesh(mesh.y, coarse_resolution, 1.3);
+mesh.z = RecursiveSmoothMesh(mesh.z, coarse_resolution, 1.3);
+
+mesh = AddPML(mesh, 8);
 
 CSX = DefineRectGrid(CSX, 1, mesh);
 
