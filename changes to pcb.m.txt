@@ -1,16 +1,19 @@
 Change priority on ground_cutout to be > 200
+
 Fix board outline:
-	pgon = [];
-	pgon(:, end+1) = [0;0.02];
-	pgon(:, end+1) = [0;0.015];
-	pgon(:, end+1) = [0.008;0.0125];
-	pgon(:, end+1) = [0.008;0.0075];
-	pgon(:, end+1) = [0.0141;0.0075];
-	pgon(:, end+1) = [0.0216;0];
-	pgon(:, end+1) = [0.029;0];
-	pgon(:, end+1) = [0.029;0.02];
-Add IC pads and port devices:
-	CSX.HyperLynxPort{end+1} = struct('ref', 'U1.2', 'xc', 0.0151, 'yc', 0.0138, 'z', 0.00139497, 'x1', 0.01472, 'y1', 0.01367, 'x2', 0.01548, 'y2', 0.01393, 'position', 'top', 'layer_name', 'Top');
-	CSX.HyperLynxPort{end+1} = struct('ref', 'U1.3', 'xc', 0.0151, 'yc', 0.0133, 'z', 0.00139497, 'x1', 0.01472, 'y1', 0.01317, 'x2', 0.01548, 'y2', 0.01343, 'position', 'top', 'layer_name', 'Top');
-	CSX.HyperLynxPort{end+1} = struct('ref', 'U1.17', 'xc', 0.01657, 'yc', 0.01355, 'z', 0.00139497, 'x1', 0.01573, 'y1', 0.01271, 'x2', 0.01741, 'y2', 0.01439, 'position', 'top', 'layer_name', 'Top');
-	CSX.HyperLynxPort{end+1} = struct('ref', 'U2.3', 'xc', 0.0211, 'yc', 0.00867, 'z', 0.00139497, 'x1', 0.02032, 'y1', 0.00837, 'x2', 0.02188, 'y2', 0.00897, 'position', 'top', 'layer_name', 'Top');
+pgon = [];
+pgon(:, end+1) = [0.00785;0.02];
+pgon(:, end+1) = [0.0058;0.01795];
+pgon(:, end+1) = [0;0.016175];
+pgon(:, end+1) = [0;0.013175];
+pgon(:, end+1) = [0.0058;0.0114];
+pgon(:, end+1) = [0.01125;0.006075];
+pgon(:, end+1) = [0.01125;0.0032];
+pgon(:, end+1) = [0.014;0.0032];
+pgon(:, end+1) = [0.0172;0];
+pgon(:, end+1) = [0.0268;0];
+pgon(:, end+1) = [0.0268;0.02];
+
+Adjust priority on top copper ground plane
+cutout = 180
+pour preceding cutout = 150

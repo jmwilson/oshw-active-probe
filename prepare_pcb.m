@@ -3,17 +3,17 @@ function [CSX, port] = prepare_pcb(CSX, excite_port)
 layer_names = {'Top', 'Ground', 'Signal/Power', 'Bottom'};
 components = {
 	% Resistors
-	struct('name', 'R1',  'orientation', 'x', 'value', 220),
-	struct('name', 'R2',  'orientation', 'x', 'value', 1.6e6),
-	struct('name', 'R3',  'orientation', 'y', 'value', 402e3),
-	struct('name', 'R4',  'orientation', 'y', 'value', 1.91e6),
-	struct('name', 'R6',  'orientation', 'y', 'value', 66.5e3),
-	struct('name', 'R10', 'orientation', 'x', 'value', 10e6),
-	struct('name', 'R11', 'orientation', 'y', 'value', 68)
+	struct('name', 'R1',  'orientation', 'x', 'value', 220, 'height', 300e-6),
+	struct('name', 'R2',  'orientation', 'x', 'value', 1.6e6, 'height', 300e-6),
+	struct('name', 'R3',  'orientation', 'x', 'value', 402e3, 'height', 300e-6),
+	struct('name', 'R4',  'orientation', 'x', 'value', 1.91e6, 'height', 300e-6),
+	struct('name', 'R6',  'orientation', 'x', 'value', 66.5e3, 'height', 300e-6),
+	struct('name', 'R10', 'orientation', 'x', 'value', 10e6, 'height', 300e-6),
+	struct('name', 'R11', 'orientation', 'x', 'value', 68, 'height', 500e-6)
 	% Capacitors
-	struct('name', 'C8', 'orientation', 'y', 'value', 2.2e-12),
-	struct('name', 'C6', 'orientation', 'x', 'value', 700e-15),
-	struct('name', 'C1', 'orientation', 'x', 'value', 330e-12)
+	struct('name', 'C8', 'orientation', 'y', 'value', 2.2e-12, 'height', 1.15e-3),
+	struct('name', 'C6', 'orientation', 'x', 'value', 700e-15, 'height', 300e-6),
+	struct('name', 'C1', 'orientation', 'x', 'value', 330e-12, 'height', 300e-6)
 };
 physical_constants;
 lambda = c0/sqrt(3.61)/3e9;
@@ -66,21 +66,16 @@ for n=1:numel(components)
 	else
 		error(['prepare_pcb: unknown lumped element type for component ' components{n}.name]);
 	end
-	if (strcmp(components{n}.orientation, 'x'))
-		component_start = [(pad1_start(1) + pad1_stop(1))/2;pad1_start(2);pad1_start(3)];
-		component_stop = [(pad2_start(1) + pad2_stop(1))/2;pad2_stop(2);pad1_start(3) + .0005];
-	else
-		component_start = [pad1_start(1);(pad1_start(2) + pad1_stop(2))/2;pad1_start(3)];
-		component_stop = [pad2_stop(1);(pad2_start(2) + pad2_stop(2))/2;pad1_start(3) + .0005];
-	end
+    if (strcmp(components{n}.orientation, 'x'))
+        component_start = [min(pad1_stop(1), pad2_stop(1));pad1_start(2);pad1_start(3)];
+        component_stop = [max(pad1_start(1), pad2_start(1));pad2_stop(2);pad1_start(3) + components{n}.height];
+    else
+        component_start = [pad1_start(1);min(pad1_stop(2), pad2_stop(2));pad1_start(3)];
+        component_stop = [pad2_stop(1);max(pad1_start(2), pad2_start(2));pad1_start(3) + components{n}.height];
+    end
 	CSX = AddBox(CSX, [components{n}.name '-' components{n}.orientation '-' num2str(components{n}.value)], 300, component_start, component_stop);
 	mesh = AddComponentMeshLines(mesh, component_start, component_stop);
 end
-
-CSX.HyperLynxPort{end+1} = struct('ref', 'U1.2', 'xc', 0.0151, 'yc', 0.0138, 'z', 0.00139497, 'x1', 0.01472, 'y1', 0.01367, 'x2', 0.01548, 'y2', 0.01393, 'position', 'top', 'layer_name', 'Top');
-CSX.HyperLynxPort{end+1} = struct('ref', 'U1.3', 'xc', 0.0151, 'yc', 0.0133, 'z', 0.00139497, 'x1', 0.01472, 'y1', 0.01317, 'x2', 0.01548, 'y2', 0.01343, 'position', 'top', 'layer_name', 'Top');
-CSX.HyperLynxPort{end+1} = struct('ref', 'U1.17', 'xc', 0.01657, 'yc', 0.01355, 'z', 0.00139497, 'x1', 0.01573, 'y1', 0.01271, 'x2', 0.01741, 'y2', 0.01439, 'position', 'top', 'layer_name', 'Top');
-CSX.HyperLynxPort{end+1} = struct('ref', 'U2.3', 'xc', 0.0211, 'yc', 0.00867, 'z', 0.00139497, 'x1', 0.02032, 'y1', 0.00837, 'x2', 0.02188, 'y2', 0.00897, 'position', 'top', 'layer_name', 'Top');
 
 %% 4. Add probe tips
 CSX = AddMetal(CSX, 'metal');
@@ -108,15 +103,15 @@ mesh.z(end+1) = .5*(tip_port_start + tip_port_stop)(3);
 % Port 2 is BUF802 input
 [pad_material, pad_start, pad_stop] = GetHyperLynxPort(CSX, 'U1.2');
 [gnd_material, gnd_start, gnd_stop] = GetHyperLynxPort(CSX, 'U1.17');
-port_2_start = [pad_stop(1), pad_start(2), pad_start(3)];
-port_2_stop = [gnd_start(1) + 32e-6, pad_stop(2), pad_stop(3)];
+port_2_start = [pad_stop(1) - 32e-6, pad_start(2), pad_start(3)];
+port_2_stop = [gnd_start(1), pad_stop(2), pad_stop(3)];
 [CSX, port{2}] = AddLumpedPort(CSX, 999, 2, 50, port_2_start, port_2_stop, [1 0 0], 2 == excite_port);
 mesh = AddComponentMeshLines(mesh, port_2_start, port_2_stop);
 mesh.x(end+1) = .5*(port_2_start + port_2_stop)(1);
 % Port 3 is BUF802 input bias
 [pad_material, pad_start, pad_stop] = GetHyperLynxPort(CSX, 'U1.3');
-port_3_start = [pad_stop(1), pad_start(2), pad_start(3)];
-port_3_stop = [gnd_start(1) + 32e-6, pad_stop(2), pad_stop(3)];
+port_3_start = [pad_stop(1) - 32e-6, pad_start(2), pad_start(3)];
+port_3_stop = [gnd_start(1), pad_stop(2), pad_stop(3)];
 [CSX, port{3}] = AddLumpedPort(CSX, 999, 3, 50, port_3_start, port_3_stop, [1 0 0], 3 == excite_port);
 mesh = AddComponentMeshLines(mesh, port_3_start, port_3_stop);
 mesh.x(end+1) = .5*(port_3_start + port_3_stop)(1);
