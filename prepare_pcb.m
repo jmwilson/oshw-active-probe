@@ -2,22 +2,20 @@ function [CSX, port] = prepare_pcb(CSX, excite_port)
 
 layer_names = {'Top', 'Ground', 'Signal/Power', 'Bottom'};
 resistors = {
-	struct('name', 'R1',  'orientation', 'x', 'value', 220, 'length', 572e-6, 'width', 377e-6, 'height', 300e-6),
-	struct('name', 'R2',  'orientation', 'x', 'value', 1.6e6, 'length', 572e-6, 'width', 377e-6, 'height', 300e-6),
-	struct('name', 'R3',  'orientation', 'y', 'value', 402e3, 'length', 572e-6, 'width', 377e-6, 'height', 300e-6),
-	struct('name', 'R4',  'orientation', 'x', 'value', 1.91e6, 'length', 572e-6, 'width', 377e-6, 'height', 300e-6),
-	struct('name', 'R6',  'orientation', 'x', 'value', 66.5e3, 'length', 966e-6, 'width', 700e-6, 'height', 500e-6),
-	struct('name', 'R10', 'orientation', 'x', 'value', 10e6, 'length', 572e-6, 'width', 377e-6, 'height', 300e-6),
-	struct('name', 'R11', 'orientation', 'x', 'value', 68, 'length', 966e-6, 'width', 700e-6, 'height', 500e-6)
+	struct('name', 'R1',  'orientation', 'x', 'value', 220, 'height', 500e-6),
+	struct('name', 'R2',  'orientation', 'x', 'value', 1.6e6, 'height', 500e-6),
+	struct('name', 'R3',  'orientation', 'y', 'value', 402e3, 'height', 500e-6),
+	struct('name', 'R4',  'orientation', 'x', 'value', 1.91e6, 'height', 500e-6),
+	struct('name', 'R6',  'orientation', 'x', 'value', 66.5e3, 'height', 500e-6),
+	struct('name', 'R10', 'orientation', 'x', 'value', 10e6, 'height', 500e-6),
+	struct('name', 'R11', 'orientation', 'x', 'value', 68, 'height', 500e-6)
 };
 capacitors = {
-	% struct('name', 'C8', 'orientation', 'y', 'value', 2.2e-12, 'width', 1.8e-3, 'height', 1.15e-3),
-	struct('name', 'C6', 'orientation', 'x', 'value', 700e-15, 'width', 377e-6, 'height', 300e-6),
-	struct('name', 'C1', 'orientation', 'x', 'value', 330e-12, 'width', 377e-6, 'height', 300e-6)
+	struct('name', 'C1', 'orientation', 'x', 'value', 330e-12, 'height', 500e-6)
 };
 physical_constants;
 lambda = c0/sqrt(3.68)/3e9;
-fine_resolution = lambda/180;
+fine_resolution = lambda/200;
 coarse_resolution = lambda/40;
 grid_duplicate_threshold = lambda/1000;
 air_space = 5e-3;
@@ -100,31 +98,6 @@ for n=1:numel(capacitors)
 	CSX = AddBox(CSX, [capacitors{n}.name '-' capacitors{n}.orientation '-' num2str(capacitors{n}.value)], 300, component_start, component_stop);
 	mesh = AddComponentMeshLines(mesh, component_start, component_stop);
 end
-% Special for trimmer C8
-[pad1_material, pad1_start, pad1_stop] = GetHyperLynxPort(CSX, 'C8.1');
-[pad2_material, pad2_start, pad2_stop] = GetHyperLynxPort(CSX, 'C8.2');
-comp_center(1) = (pad1_start(1) + pad2_stop(1))/2;
-comp_center(2) = (pad1_start(2) + pad2_stop(2))/2;
-component_size = 500e-6;
-component_height = 100e-6;
-component_start = [comp_center, layer_height.('Top')] + [-component_size/2, -component_size/2, 0];
-component_stop = [comp_center, layer_height.('Top')] + [component_size/2, component_size/2, component_height];
-CSX = AddLumpedElement(CSX, 'C8', 'z', 'Caps', 1, 'C', 2.2e-12);
-CSX = AddBox(CSX, 'C8', 300, component_start, component_stop);
-mesh = AddComponentMeshLines(mesh, component_start, component_stop);
-% Add traces
-track_width = 500e-6;
-p1_track_start = [(pad1_start(1) + pad1_stop(1))/2 - track_width/2, pad1_start(2), layer_height.('Top')];
-p1_track_stop = [comp_center(1) + track_width/2, comp_center(2), layer_height.('Top')];
-CSX = AddBox(CSX, 'metal', 200, p1_track_start, p1_track_stop);
-p2_riser_start = [(pad2_start(1) + pad2_stop(1))/2 - track_width/2, pad2_stop(2) - 250e-6, layer_height.('Top')];
-p2_riser_stop = [(pad2_start(1) + pad2_stop(1))/2 + track_width/2, pad2_stop(2), layer_height.('Top') + component_height];
-p2_track_start = [(pad2_start(1) + pad2_stop(1))/2 - track_width/2, pad2_stop(2), layer_height.('Top') + component_height];
-p2_track_stop = [comp_center(1) + track_width/2, comp_center(2), layer_height.('Top') + component_height];
-CSX = AddBox(CSX, 'metal', 200, p2_riser_start, p2_riser_stop);
-CSX = AddBox(CSX, 'metal', 200, p2_track_start, p2_track_stop);
-mesh = AddComponentMeshLines(mesh, p1_track_start, p1_track_start);
-mesh = AddComponentMeshLines(mesh, p2_riser_start, p2_riser_stop);
 
 %% 4. Add probe tips
 [pad1_material, pad1_start, pad1_stop] = GetHyperLynxPort(CSX, 'J1.1');
@@ -177,10 +150,10 @@ mesh.z(end+1) = .5*(port_4_start + port_4_stop)(3);
 mesh = CleanMesh(mesh, grid_duplicate_threshold);
 
 % Detail box
-% detail_x = [0.00685, 0.013];
-% detail_y = [0.007, 0.013];
-% mesh.x = [mesh.x, RecursiveSmoothMesh([mesh.x(logical(detail_x(1) <= mesh.x & mesh.x <= detail_x(2))), detail_x], fine_resolution, 1.4)];
-% mesh.y = [mesh.y, RecursiveSmoothMesh([mesh.y(logical(detail_y(1) <= mesh.y & mesh.y <= detail_y(2))), detail_y], fine_resolution, 1.4)];
+detail_x = [0, 0.0075];
+detail_y = [0.0135, 0.0155];
+mesh.x = [mesh.x, RecursiveSmoothMesh([mesh.x(logical(detail_x(1) <= mesh.x & mesh.x <= detail_x(2))), detail_x], fine_resolution, 1.4)];
+mesh.y = [mesh.y, RecursiveSmoothMesh([mesh.y(logical(detail_y(1) <= mesh.y & mesh.y <= detail_y(2))), detail_y], fine_resolution, 1.4)];
 
 mesh.x = RecursiveSmoothMesh(mesh.x, coarse_resolution, 1.3);
 mesh.y = RecursiveSmoothMesh(mesh.y, coarse_resolution, 1.3);
