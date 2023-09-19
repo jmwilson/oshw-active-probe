@@ -28,10 +28,7 @@ for n=1:num_ports
 	status = mkdir(Sim_Path);
 
 	openEMS_opts = '';
-	% openEMS_opts = '--disable-dumps';
-	% openEMS_opts = '--debug-PEC --no-simulation';
 	WriteOpenEMS([Sim_Path '/' Sim_CSX], FDTD, CSX);
-	% CSXGeomPlot([Sim_Path '/' Sim_CSX]);
 	RunOpenEMS(Sim_Path, Sim_CSX, openEMS_opts);
 
 	%% Post-processing
