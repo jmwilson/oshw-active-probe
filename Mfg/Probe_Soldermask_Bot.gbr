@@ -1,0 +1,23 @@
+%TF.GenerationSoftware,Altium Limited,Altium Designer,18.1.11 (251)*%
+G04 Layer_Color=16711935*
+%FSLAX26Y26*%
+%MOIN*%
+%TF.FileFunction,Soldermask,Bot*%
+%TF.Part,Single*%
+G01*
+G75*
+%TA.AperFunction,ComponentPad*%
+%ADD49O,0.181165X0.092583*%
+%ADD50O,0.092583X0.181165*%
+%ADD51O,0.102425X0.200850*%
+D49*
+X2551181Y381890D02*
+D03*
+D50*
+X2669291Y196850D02*
+D03*
+D51*
+X2433071D02*
+D03*
+%TF.MD5,0d354efd7318a3b4e6d064c7ed4d1da1*%
+M02*
