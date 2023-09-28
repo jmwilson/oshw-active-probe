@@ -3,7 +3,7 @@ function [CSX, port] = prepare_pcb(CSX, excite_port)
 layer_names = {'Top', 'Ground', 'Signal/Power', 'Bottom'};
 resistors = {
 	struct('name', 'R1', 'orientation', 'x', 'value', 82, 'height', 500e-6),
-	struct('name', 'R2',  'orientation', 'x', 'value', 110, 'height', 500e-6),
+	struct('name', 'R2',  'orientation', 'x', 'value', 100, 'height', 500e-6),
 	struct('name', 'R3',  'orientation', 'x', 'value', 1.6e6, 'height', 500e-6),
 	struct('name', 'R4',  'orientation', 'x', 'value', 200e3, 'height', 500e-6),
 	struct('name', 'R5', 'orientation', 'x', 'value', 200e3, 'height', 500e-6),
@@ -18,7 +18,7 @@ capacitors = {
 };
 physical_constants;
 lambda = c0/sqrt(3.68)/3e9;
-coarse_resolution = lambda/40;
+coarse_resolution = lambda/50;
 fine_resolution = coarse_resolution/6;
 air_space = lambda/4;
 
@@ -109,19 +109,20 @@ component_stop = [pad1_start(1) + tip_len, (pad1_start(2) + pad1_stop(2) + tip_d
 CSX = AddBox(CSX, 'metal', 300, component_start, component_stop);
 
 %% 4. Meshing
-% Add meshing for PCB copper pour capacitor
-mesh = AddThirdsMeshLines(mesh, 6.6e-3, 8.3e-3, 13.5e-3, 15.4e-3, fine_resolution);
 
 % Detail box
-detail_x = [0.00595, 0.016];
-detail_y = [0.0111, 0.016];
-mesh.x = [mesh.x, SmoothMeshLines([mesh.x(logical(detail_x(1) <= mesh.x & mesh.x <= detail_x(2)))], fine_resolution, 1.5)];
-mesh.y = [mesh.y, SmoothMeshLines([mesh.y(logical(detail_y(1) <= mesh.y & mesh.y <= detail_y(2)))], fine_resolution, 1.5)];
+% detail_x = [0.00595, 0.016];
+% detail_y = [0.0111, 0.016];
+% mesh.x = [mesh.x, SmoothMeshLines([mesh.x(logical(detail_x(1) <= mesh.x & mesh.x <= detail_x(2)))], fine_resolution, 1.5)];
+% mesh.y = [mesh.y, SmoothMeshLines([mesh.y(logical(detail_y(1) <= mesh.y & mesh.y <= detail_y(2)))], fine_resolution, 1.5)];
 
-detail_x = [0.017, 0.023];
-detail_y = [0.005, 0.00625];
-mesh.x = [mesh.x, SmoothMeshLines([mesh.x(logical(detail_x(1) <= mesh.x & mesh.x <= detail_x(2)))], fine_resolution, 1.5)];
-mesh.y = [mesh.y, SmoothMeshLines([mesh.y(logical(detail_y(1) <= mesh.y & mesh.y <= detail_y(2)))], fine_resolution, 1.5)];
+% detail_x = [0.017, 0.023];
+% detail_y = [0.005, 0.00625];
+% mesh.x = [mesh.x, SmoothMeshLines([mesh.x(logical(detail_x(1) <= mesh.x & mesh.x <= detail_x(2)))], fine_resolution, 1.5)];
+% mesh.y = [mesh.y, SmoothMeshLines([mesh.y(logical(detail_y(1) <= mesh.y & mesh.y <= detail_y(2)))], fine_resolution, 1.5)];
+
+% Add meshing for PCB copper pour capacitor
+mesh = AddThirdsMeshLines(mesh, 6.6e-3, 8.3e-3, 13.5e-3, 15.4e-3, coarse_resolution/10);
 
 %% 5. Add ports
 % Do this after initial meshing and snap to existing mesh lines to avoid creating hyperfine detail

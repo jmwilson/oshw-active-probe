@@ -15,3 +15,7 @@ pgon(:, end+1) = [0.032;0.02];
 Adjust priority on top copper ground plane
 cutout = 180
 pour preceding cutout = 150
+
+octave --no-gui preview.m
+octave --no-gui probe_input.m
+s2spice.exe /l /s /q /f parameters.s4p
