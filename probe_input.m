@@ -6,13 +6,13 @@ f_min = 100e6;
 f_max = 3e9;
 f0 = (f_min + f_max)/2;
 fc = f_max - f0;
-f = linspace(f0-fc, f0+fc, 2001);
+f = logspace(log10(f0-fc), log10(f0+fc), 2001);
 num_ports = 4;
 sparam = cell(num_ports, num_ports);
 
 FDTD = InitFDTD('EndCriteria', 1e-3);
 FDTD = SetGaussExcite(FDTD, f0, fc);
-BC   = {'PML_8', 'PML_8', 'PML_8', 'PML_8', 'PML_8', 'PML_8'};
+BC   = {'PEC', 'PEC', 'PEC', 'PEC', 'PEC', 'PEC'};
 FDTD = SetBoundaryCond(FDTD, BC);
 
 for n=1:num_ports

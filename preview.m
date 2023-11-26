@@ -9,7 +9,7 @@ fc = f_max - f0;
 
 FDTD = InitFDTD('EndCriteria', 1e-3);
 FDTD = SetGaussExcite(FDTD, f0, fc);
-BC   = {'MUR', 'MUR', 'MUR', 'MUR', 'MUR', 'MUR'};
+BC   = {'PEC', 'PEC', 'PEC', 'PEC', 'PEC', 'PEC'};
 FDTD = SetBoundaryCond(FDTD, BC);
 
 CSX = InitCSX();

@@ -2,8 +2,8 @@ function [CSX, port] = prepare_pcb(CSX, excite_port)
 
 layer_names = {'Top', 'Ground', 'Signal/Power', 'Bottom'};
 resistors = {
-	struct('name', 'R1', 'orientation', 'x', 'value', 82, 'height', 500e-6),
-	struct('name', 'R2',  'orientation', 'x', 'value', 100, 'height', 500e-6),
+	struct('name', 'R1', 'orientation', 'x', 'value', 91, 'height', 500e-6),
+	struct('name', 'R2',  'orientation', 'x', 'value', 33, 'height', 500e-6),
 	struct('name', 'R3',  'orientation', 'x', 'value', 1.6e6, 'height', 500e-6),
 	struct('name', 'R4',  'orientation', 'x', 'value', 200e3, 'height', 500e-6),
 	struct('name', 'R5', 'orientation', 'x', 'value', 200e3, 'height', 500e-6),
@@ -18,19 +18,20 @@ capacitors = {
 };
 physical_constants;
 lambda = c0/sqrt(3.68)/3e9;
-coarse_resolution = lambda/50;
-fine_resolution = coarse_resolution/6;
+coarse_resolution = lambda/80;
 air_space = lambda/4;
+tip_extend = 3e-3;
+probe_gap = .5e-3;
 
 % Get grid
 mesh.x = CSX.RectilinearGrid.XLines;
 mesh.y = CSX.RectilinearGrid.YLines;
 mesh.z = CSX.RectilinearGrid.ZLines;
 
-mesh.x(end+1) = min(mesh.x) - air_space;
-mesh.x(end+1) = max(mesh.x) + air_space;
-mesh.y(end+1) = min(mesh.y) - air_space;
-mesh.y(end+1) = max(mesh.y) + air_space;
+mesh.x(end+1) = min(mesh.x) - tip_extend - probe_gap;
+mesh.x(end+1) = max(mesh.x);
+mesh.y(end+1) = min(mesh.y);
+mesh.y(end+1) = max(mesh.y);
 mesh.z(end+1) = min(mesh.z) - air_space;
 mesh.z(end+1) = max(mesh.z) + air_space;
 
@@ -42,7 +43,9 @@ for n=1:numel(layer_names)
 	mesh.z(end+1) = CSX.Properties.(type){pos}.Primitives.(prop_types{1}){1}.ATTRIBUTE.Elevation;
 	layer_height.(layer_names{n}) = CSX.Properties.(type){pos}.Primitives.(prop_types{1}){1}.ATTRIBUTE.Elevation;
 end
-mesh.z = [mesh.z, linspace(layer_height.('Bottom'), layer_height.('Signal/Power'), 5), linspace(layer_height.('Signal/Power'), layer_height.('Ground'), 5), linspace(layer_height.('Ground'), layer_height.('Top'), 5)];
+% Ensure 4 cells between layers 1+2 and 3+4
+mesh.z = [mesh.z, linspace(layer_height.('Bottom'), layer_height.('Signal/Power'), 5), linspace(layer_height.('Ground'), layer_height.('Top'), 5)];
+mesh.x = [mesh.x, linspace(min(mesh.x), -tip_extend, 5)];
 
 %% 2. Add components
 % Materials
@@ -53,7 +56,9 @@ CSX = SetMaterialProperty(CSX, 'alumina', 'Epsilon', alumina_er);
 for n=1:numel(resistors)
 	[pad1_material, pad1_start, pad1_stop] = GetHyperLynxPort(CSX, [resistors{n}.name '.1']);
 	[pad2_material, pad2_start, pad2_stop] = GetHyperLynxPort(CSX, [resistors{n}.name '.2']);
-	CSX = AddLumpedElement(CSX, [resistors{n}.name '-' resistors{n}.orientation '-' num2str(resistors{n}.value)], resistors{n}.orientation, 'Caps', 0, 'R', resistors{n}.value);
+	if resistors{n}.value ~= 0
+		CSX = AddLumpedElement(CSX, [resistors{n}.name '-' resistors{n}.orientation '-' num2str(resistors{n}.value)], resistors{n}.orientation, 'Caps', 0, 'R', resistors{n}.value);
+	end
     if (strcmp(resistors{n}.orientation, 'x'))
         term1_start = [(pad1_start(1) + pad1_stop(1))/2, pad1_start(2), pad1_start(3)];
         term1_stop = [(pad1_start(1) + pad1_stop(1))/2, pad1_stop(2), pad1_start(3) + resistors{n}.height];
@@ -72,7 +77,11 @@ for n=1:numel(resistors)
 	CSX = AddBox(CSX, 'metal', 200, term1_start, term1_stop);
 	CSX = AddBox(CSX, 'metal', 200, term2_start, term2_stop);
 	CSX = AddBox(CSX, 'alumina', 150, term1_start, term2_stop);
-	CSX = AddBox(CSX, [resistors{n}.name '-' resistors{n}.orientation '-' num2str(resistors{n}.value)], 300, res_start, res_stop);
+	if resistors{n}.value ~= 0
+		CSX = AddBox(CSX, [resistors{n}.name '-' resistors{n}.orientation '-' num2str(resistors{n}.value)], 300, res_start, res_stop);
+	else
+		CSX = AddBox(CSX, 'metal', 300, res_start, res_stop);
+	end
 	mesh = AddComponentMeshLines(mesh, term1_start, term2_stop);
 end
 for n=1:numel(capacitors)
@@ -86,74 +95,43 @@ for n=1:numel(capacitors)
         component_start = [pad1_start(1);min(pad1_stop(2), pad2_stop(2));pad1_start(3)];
         component_stop = [pad2_stop(1);max(pad1_start(2), pad2_start(2));pad1_start(3) + capacitors{n}.height];
     end
-	CSX = AddBox(CSX, [capacitors{n}.name '-' capacitors{n}.orientation '-' num2str(capacitors{n}.value)], 300, component_start, component_stop);
+    if capacitors{n}.value ~= 0
+		CSX = AddBox(CSX, [capacitors{n}.name '-' capacitors{n}.orientation '-' num2str(capacitors{n}.value)], 300, component_start, component_stop);
+	else
+		CSX = AddBox(CSX, 'metal', 300, component_start, component_stop);
+	end
 	mesh = AddComponentMeshLines(mesh, component_start, component_stop);
 end
 
-%% 3. Add probe tips and ground test fixture
-tip_dia = 1.4e-3;
-tip_extend = 3e-3;
-tip_len = 4.5e-3;
-
-pgon = [];
-pgon(:, end+1) = [13.95e-3; 2.825e-3];
-pgon(:, end+1) = [13.95e-3; .75e-3];
-pgon(:, end+1) = [0; .75e-3];
-pgon(:, end+1) = [0; 12.852e-3];
-pgon(:, end+1) = [5.645e-3; 11.13e-3];
-CSX = AddPolygon(CSX, 'metal', 300, 2, layer_height.('Top'), pgon);
-
-[pad1_material, pad1_start, pad1_stop] = GetHyperLynxPort(CSX, 'J2.1');
-component_start = [pad1_start(1) - tip_extend, (pad1_start(2) + pad1_stop(2) - tip_dia)/2, pad1_start(3)];
-component_stop = [pad1_start(1) + tip_len, (pad1_start(2) + pad1_stop(2) + tip_dia)/2, pad1_start(3) + tip_dia];
+%% 3. Add probe tip feature
+% Probe tip
+barrel_dia = 1.4e-3;
+tip_dia = .5e-3;
+[pad_material, pad_start, pad_stop] = GetHyperLynxPort(CSX, 'J1.1');
+component_start = [pad_start(1), (pad_start(2) + pad_stop(2) - barrel_dia)/2, pad_start(3)];
+component_stop = [pad_stop(1), (pad_start(2) + pad_stop(2) + barrel_dia)/2, pad_start(3) + barrel_dia/2];
 CSX = AddBox(CSX, 'metal', 300, component_start, component_stop);
+component_start = [pad_start(1), (pad_start(2) + pad_stop(2))/2, pad_start(3) + barrel_dia/2];
+component_stop = [pad_stop(1), (pad_start(2) + pad_stop(2))/2, pad_start(3) + barrel_dia/2];
+CSX = AddCylinder(CSX, 'metal', 300, component_start, component_stop, barrel_dia/2);
+component_start = [pad_start(1), (pad_start(2) + pad_stop(2))/2, pad_start(3) + barrel_dia/2];
+component_stop = [-tip_extend, (pad_start(2) + pad_stop(2))/2, pad_start(3) + barrel_dia/2];
+CSX = AddCylinder(CSX, 'metal', 300, component_start, component_stop, tip_dia/2);
 
 %% 4. Meshing
+% Force equidistant lines centered around the tip contact for measurement plane
+mesh.z = [mesh.z, (pad_start(3) + barrel_dia/2) + min(abs(mesh.z - (pad_start(3) + barrel_dia/2)))*[-1:1]];
 
-% Detail box
-% detail_x = [0.00595, 0.016];
-% detail_y = [0.0111, 0.016];
-% mesh.x = [mesh.x, SmoothMeshLines([mesh.x(logical(detail_x(1) <= mesh.x & mesh.x <= detail_x(2)))], fine_resolution, 1.5)];
-% mesh.y = [mesh.y, SmoothMeshLines([mesh.y(logical(detail_y(1) <= mesh.y & mesh.y <= detail_y(2)))], fine_resolution, 1.5)];
-
-% detail_x = [0.017, 0.023];
-% detail_y = [0.005, 0.00625];
-% mesh.x = [mesh.x, SmoothMeshLines([mesh.x(logical(detail_x(1) <= mesh.x & mesh.x <= detail_x(2)))], fine_resolution, 1.5)];
-% mesh.y = [mesh.y, SmoothMeshLines([mesh.y(logical(detail_y(1) <= mesh.y & mesh.y <= detail_y(2)))], fine_resolution, 1.5)];
+% Meshing for op amp input
+[pad_material, pad_start, pad_stop] = GetHyperLynxPort(CSX, 'U2.3');
+mesh.x = [mesh.x, linspace(pad_start(1), pad_stop(1), 3)]; % make sure this is odd so (start+stop)/2 is a mesh line
+[pad_material, pad_start, pad_stop] = GetHyperLynxPort(CSX, 'R9.2');
+mesh.y = [mesh.y, linspace(pad_start(2), pad_stop(2), 4)];
 
 % Add meshing for PCB copper pour capacitor
 mesh = AddThirdsMeshLines(mesh, 6.6e-3, 8.3e-3, 13.5e-3, 15.4e-3, coarse_resolution/10);
 
-%% 5. Add ports
-% Do this after initial meshing and snap to existing mesh lines to avoid creating hyperfine detail
-% Port 1 is the tip
-[pad1_material, pad1_start, pad1_stop] = GetHyperLynxPort(CSX, 'J1.1');
-tip_port_stop = [0, min(mesh.y(logical(mesh.y >= pad1_start(2)))), layer_height.('Top')];
-tip_port_start = [0, max(mesh.y(logical(mesh.y <= 12.852e-3))), layer_height.('Top')];
-[CSX, port{1}] = AddLumpedPort(CSX, 999, 1, 50, tip_port_start, tip_port_stop, [0 1 0], 1 == excite_port);
-mesh = AddComponentMeshLines(mesh, tip_port_start, tip_port_stop);
-% Port 2 is BUF802 input
-[pad_material, pad_start, pad_stop] = GetHyperLynxPort(CSX, 'U1.2');
-[gnd_material, gnd_start, gnd_stop] = GetHyperLynxPort(CSX, 'U1.17');
-port_2_stop = [pad_stop(1) - 32e-6, max(mesh.y(logical(mesh.y <= pad_stop(2)))), pad_start(3)];
-port_2_start = [gnd_start(1), min(mesh.y(logical(mesh.y >= pad_start(2)))), pad_stop(3)];
-[CSX, port{2}] = AddLumpedPort(CSX, 999, 2, 50, port_2_start, port_2_stop, [1 0 0], 2 == excite_port);
-mesh = AddComponentMeshLines(mesh, port_2_start, port_2_stop);
-% Port 3 is BUF802 input bias
-[pad_material, pad_start, pad_stop] = GetHyperLynxPort(CSX, 'U1.3');
-port_3_stop = [pad_stop(1) - 32e-6, max(mesh.y(logical(mesh.y <= pad_stop(2)))), pad_start(3)];
-port_3_start = [gnd_start(1), min(mesh.y(logical(mesh.y >= pad_start(2)))), pad_stop(3)];
-[CSX, port{3}] = AddLumpedPort(CSX, 999, 3, 50, port_3_start, port_3_stop, [1 0 0], 3 == excite_port);
-mesh = AddComponentMeshLines(mesh, port_3_start, port_3_stop);
-% Port 4 is op amp + input
-[pad_material, pad_start, pad_stop] = GetHyperLynxPort(CSX, 'U2.3');
-port_4_stop = [(pad_start(1) + pad_stop(1))/2, max(mesh.y(logical(mesh.y <= pad_stop(2)))), pad_start(3)];
-port_4_start = [(pad_start(1) + pad_stop(1))/2, min(mesh.y(logical(mesh.y >= pad_start(2)))), layer_height.('Ground')];
-[CSX, port{4}] = AddLumpedPort(CSX, 999, 4, 50, port_4_start, port_4_stop, [0 0 1], 4 == excite_port);
-mesh = AddComponentMeshLines(mesh, port_4_start, port_4_stop);
-
-%% 6. Add via grids
-% Do this after initial meshing and snap to existing mesh lines to avoid creating hyperfine detail
+% Via meshing: do this after components and snap to existing mesh lines when possible to avoid creating hyperfine detail
 type = GetPropertyType(CSX, 'via');
 pos = GetPropertyPosition(CSX, type, 'via');
 for n=1:numel(CSX.Properties.(type){pos}.Primitives.('Cylinder'))
@@ -168,9 +146,31 @@ for n=1:numel(CSX.Properties.(type){pos}.Primitives.('Cylinder'))
 	end
 end
 
-%% 7. Final mesh smoothing
+% Final mesh smoothing
 mesh.x = RecursiveSmoothMesh(mesh.x, coarse_resolution, 1.5);
 mesh.y = RecursiveSmoothMesh(mesh.y, coarse_resolution, 1.5);
 mesh.z = RecursiveSmoothMesh(mesh.z, coarse_resolution, 1.5);
-
 CSX = DefineRectGrid(CSX, 1, mesh);
+
+%% 5. Ports
+% Port 1 is the tip
+[pad_material, pad_start, pad_stop] = GetHyperLynxPort(CSX, 'J1.1');
+portstart = [-tip_extend, (pad_start(2) + pad_stop(2))/2 - tip_dia/2, pad_start(3) + barrel_dia/2];
+portstop  = [min(mesh.x), (pad_start(2) + pad_stop(2))/2 + tip_dia/2, pad_start(3) + barrel_dia/2];
+[CSX,port{1}] = AddLumpedPort(CSX, 999, 1, 50, portstart, portstop, [1 0 0], 1 == excite_port);
+% Port 2 is BUF802 input
+[pad_material, pad_start, pad_stop] = GetHyperLynxPort(CSX, 'U1.2');
+[gnd_material, gnd_start, gnd_stop] = GetHyperLynxPort(CSX, 'U1.17');
+port_stop = [max(mesh.x(logical(mesh.x <= pad_stop(1)))), max(mesh.y(logical(mesh.y <= pad_stop(2)))), pad_start(3)];
+port_start = [min(mesh.x(logical(mesh.x >= gnd_start(1)))), min(mesh.y(logical(mesh.y >= pad_start(2)))), pad_stop(3)];
+[CSX, port{2}] = AddLumpedPort(CSX, 999, 2, 50, port_start, port_stop, [1 0 0], 2 == excite_port);
+% Port 3 is BUF802 input bias
+[pad_material, pad_start, pad_stop] = GetHyperLynxPort(CSX, 'U1.3');
+port_stop = [max(mesh.x(logical(mesh.x <= pad_stop(1)))), max(mesh.y(logical(mesh.y <= pad_stop(2)))), pad_start(3)];
+port_start = [min(mesh.x(logical(mesh.x >= gnd_start(1)))), min(mesh.y(logical(mesh.y >= pad_start(2)))), pad_stop(3)];
+[CSX, port{3}] = AddLumpedPort(CSX, 999, 3, 50, port_start, port_stop, [1 0 0], 3 == excite_port);
+% Port 4 is op amp + input
+[pad_material, pad_start, pad_stop] = GetHyperLynxPort(CSX, 'U2.3');
+port_stop = [(pad_start(1) + pad_stop(1))/2, max(mesh.y(logical(mesh.y <= pad_stop(2)))), pad_start(3)];
+port_start = [(pad_start(1) + pad_stop(1))/2, min(mesh.y(logical(mesh.y >= pad_start(2)))), layer_height.('Ground')];
+[CSX, port{4}] = AddLumpedPort(CSX, 999, 4, 50, port_start, port_stop, [0 0 1], 4 == excite_port);
