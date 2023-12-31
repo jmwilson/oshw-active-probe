@@ -1,0 +1,9 @@
+syntax: glob
+
+preview
+*.orig
+run-port*
+run
+*.s?p
+*.asy
+*.inc

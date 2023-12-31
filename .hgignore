@@ -1,11 +1,8 @@
 syntax: glob
 
-History
-*.PrjPCBStructure
-Project Logs*
-Project Outputs*
-__Previews
-debug.log
 *.orig
 matplotlibrc
 .octaverc
+subinclude:board/.hgignore
+subinclude:simulation/.hgignore
+subinclude:measurement/.hgignore
