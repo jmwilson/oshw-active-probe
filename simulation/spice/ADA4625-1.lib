@@ -1,0 +1,258 @@
+*ADA4625 Macro-model
+*Function:Amplifier
+*
+*Revision History:
+*Rev.1 Oct 2017-JL
+*Copyright 2017 by Analog Devices
+*
+*Refer to http://www.analog.com/Analog_Root/static/techSupport/designTools/spicemodels/license
+*for License Statement. Use of this model indicates your acceptance
+*of the terms and provisions in the License Staement.
+*
+*Tested on MultSIm, SiMetrix(NGSpice), PSpice
+*
+*Not modeled: Distortion, PSRR, Overload Recovery,
+*             Shutdown Turn On/Turn Off time
+*
+*Parameters modeled include:
+*   Vos, Ibias, Input CM limits and Typ output voltge swing over full supply range,
+*   Open Loop Gain & Phase, Slew Rate, Output current limits, Voltage & Current Noise over temp,
+*   Capacitive load drive, Quiescent and dynamic supply currents,
+*   Shut Down pin functionality where applicable,
+*   Single supply & offset supply functionality.
+*
+*Node Assignments
+*                Non-Inverting Input
+*                |   Inverting Input
+*                |   |   Positive supply
+*                |   |   |   Negative supply
+*                |   |   |   |   Output
+*                |   |   |   |   |
+.Subckt ADA4625 IN+ IN- V+ V- OUT
+*
+***Power Supplies***
+Rz1	V+	1020	Rideal	1e-6
+Rz2	V-	1030	Rideal	1e-6
+Ibias	1020	1030	dc	0.4e-3
+DzPS	98	1020	diode
+Iquies	1020	98	dc	3.6e-3
+S1	98	1030	106	113	Switch
+R1	1020	99	Rideal	1e7
+R2	99	1030	Rideal	1e7
+e1	111	110	1020	110	1
+e2	110	112	110	1030	1
+e3	110	0	99	0	1
+*
+*
+***Inputs***
+S2	1	IN+	106	113	Switch
+S3	9	IN-	106	113	Switch
+VOS	1	2	dc	15e-6
+IbiasP	110	2	dc	15e-12
+IbiasN	110	9	dc	15e-12
+RinCMP	110	2	Rideal	1000000e6
+RinCMN	9	110	Rideal	1000000e6
+CinCMP	110	2	11.3e-12
+CinCMN	9	110	11.3e-12
+IOS	9	2	2e-12
+RinDiff	9	2	Rideal	1000000000e3
+CinDiff	9	2	8.6e-12
+*
+*
+***Non-Inverting Input with Clamp***
+g1	3	110	110	2	0.001
+RInP	3	110	Rideal	1e3
+RX1	40	3	Rideal	0.001
+DInP	40	41	diode
+DInN	42	40	diode
+VinP	111	41	dc	3.96
+VinN	42	112	dc	0.26
+*
+*
+***Vnoise***
+hVn	6	5	Vmeas1	707.10678
+Vmeas1	20	110	DC	0
+Vvn	21	110	dc	0.65
+Dvn	21	20	DVnoisy
+hVn1	6	7	Vmeas2	707.10678
+Vmeas2	22	110	dc	0
+Vvn1	23	110	dc	0.65
+Dvn1	23	22	DVnoisy
+*
+*
+***Inoise***
+FnIN	9	110	Vmeas3	0.7071068
+Vmeas3	51	110	dc	0
+VnIN	50	110	dc	0.65
+DnIN	50	51	DINnoisy
+FnIN1	110	9	Vmeas4	0.7071068
+Vmeas4	53	110	dc	0
+VnIN1	52	110	dc	0.65
+DnIN1	52	53	DINnoisy
+*
+FnIP	2	110	Vmeas5	0.7071068
+Vmeas5	31	110	dc	0
+VnIP	30	110	dc	0.65
+DnIP	30	31	DIPnoisy
+FnIP1	110	2	Vmeas6	0.7071068
+Vmeas6	33	110	dc	0
+VnIP1	32	110	dc	0.65
+DnIP1	32	33	DIPnoisy
+*
+*
+***CMRR***
+RcmrrP	3	10	Rideal	1e12
+RcmrrN	10	9	Rideal	1e12
+g10	11	110	10	110	-0.634e-9
+Lcmrr	11	12	1591.6e-3
+Rcmrr	12	110	Rideal	1e3
+e4	5	3	11	110	1
+*
+*
+***Power Down***
+VPD	111	80	dc	2.6
+VPD1	81	0	dc	0.1
+RPD	111	106	Rideal	1e6
+ePD	80	113	82	0	1
+RDP1	82	0	Rideal	1e3
+CPD	82	0	1e-10
+S5	81	82	83	113	Switch
+CDP1	83	0	1e-12
+RPD2	106	83	1e6
+*
+*
+***Feedback Pin***
+*RF	105	OUT	Rideal	0.001
+*
+*
+***VFB Stage***
+g200	200	110	7	9	1
+R200	200	110	Rideal	250
+DzSlewP	201	200	DzSlewP
+DzSlewN	201	110	DzSlewN
+*
+*
+***Dominant Pole at 0.599999999999996 Hz***
+g210	210	110	200	110	0.3455e-6
+R210	210	110	Rideal	265.26e6
+C210	210	110	1e-012
+*
+*
+***Output Voltage Clamp-1***
+RX2	60	210	Rideal	0.001
+DzVoutP	61	60	DzVoutP
+DzVoutN	60	62	DzVoutN
+DVoutP	61	63	diode
+DVoutN	64	62	diode
+VoutP	65	63	dc	5.723
+VoutN	64	66	dc	5.603
+e60	65	110	111	110	1.004
+e61	66	110	112	110	1.004
+*
+*
+***Pole at 300MHz***
+g220	220	110	210	110	0.001
+R220	220	110	Rideal	1000
+C220	220	110	0.5305e-12
+*
+***Pole at 300MHz***
+g230	230	110	220	110	0.001
+R230	230	110	Rideal	1000
+C230	230	110	0.5305e-12
+*
+***Buffer***
+g240	240	110	230	110	0.001
+R240	240	110	Rideal	1000
+*
+***Buffer***
+g245	245	110	240	110	0.001
+R245	245	110	Rideal	1000
+*
+***Buffer***
+g250	250	110	245	110	0.001
+R250	250	110	Rideal	1000
+*
+***Buffer***
+g255	255	110	250	110	0.001
+R255	255	110	Rideal	1000
+*
+***Buffer***
+g260	260	110	255	110	0.001
+R260	260	110	Rideal	1000
+*
+***Buffer***
+g265	265	110	260	110	0.001
+R265	265	110	Rideal	1000
+*
+***Buffer***
+g270	270	110	265	110	0.001
+R270	270	110	Rideal	1000
+*
+***Buffer***
+e280	280	110	270	110	1
+R280	280	285	Rideal	10
+*
+***Buffer***
+e290	290	110	285	110	1
+R290	290	292	Rideal	10
+e295	295	110	292	110	1
+*
+*
+***Output Stage***
+g300	300	110	295	110	0.001
+R300	300	110	Rideal	1000
+e301	301	110	300	110	1
+Rout	302	303	Rideal	 2
+Lout	303	310	 1e-9
+Cout	310	110	 1e-12
+*
+*
+***Output Current Limit***
+H1	301	304	Vsense1	100
+Vsense1	301	302	dc	0
+VIoutP	305	304	dc	3.936
+VIoutN	304	306	dc	3.936
+DIoutP	307	305	diode
+DIoutN	306	307	diode
+Rx3	307	300	Rideal	0.001
+*
+*
+***Output Clamp-2***
+VoutP1	111	73	dc	0.965
+VoutN1	74	112	dc	0.945
+DVoutP1	75	73	diode
+DVoutN1	74	75	diode
+RX4	75	310	Rideal	0.001
+*
+*
+***Supply Currents***
+FIoVcc	314	110	Vmeas8	1
+Vmeas8	310	311	dc	0
+R314	110	314	Rideal	1e9
+DzOVcc	110	314	diode
+DOVcc	V+	314	diode
+RX5	311	312	Rideal	0.001
+FIoVee	315	110	Vmeas9	1
+Vmeas9	312	313	dc	0
+R315	315	110	Rideal	1e9
+DzOVee	315	110	diode
+DOVee	315	V-	diode
+*
+*
+***Output Switch***
+S4	OUT	313	106	113	Switch
+*
+*
+*** Common Models ***
+.model	diode	d(bv=100)
+.model	Switch	vswitch(Von=0.105,Voff=0.095,ron=0.001,roff=1e6)
+.model	DzVoutP	D(BV=4.3)
+.model	DzVoutN	D(BV=4.3)
+.model	DzSlewP	D(BV=139.423)
+.model	DzSlewN	D(BV=139.423)
+.model	DVnoisy	D(IS=4.11e-16 KF=3.28e-18)
+.model	DINnoisy	D(IS=7.72e-22 KF=0.00e0)
+.model	DIPnoisy	D(IS=7.72e-22 KF=0.00e0)
+.model	Rideal	res(T_ABS=-273)
+*
+.ends
