@@ -1,8 +1,0 @@
-syntax:glob
-
-preview
-*.orig
-run-port*
-*.s?p
-*.asy
-*.inc
