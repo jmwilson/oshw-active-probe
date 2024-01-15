@@ -7,7 +7,7 @@ physical_constants;
 %% Set GCPW parameters here
 unit = 25.4e-6; % mil
 f_min = 1e9;
-f_max = 3e9;
+f_max = 9e9;
 
 dump_fields = false;
 substrate_thickness = 8;
@@ -37,23 +37,27 @@ FDTD = SetBoundaryCond(FDTD, BC);
 
 % Setup geometry
 CSX = InitCSX();
-resolution = C0/(f_max*sqrt(substrate_er))/unit/200; % resolution of lambda/50
-mesh.x = SmoothMeshLines([-MSL_length, -MSL_length/3, MSL_length/3, MSL_length, -MSL_length:via_spacing:MSL_length], resolution, 1.5);
+resolution = C0/(f_max*sqrt(substrate_er))/unit/40; % resolution of lambda/40
 if MSL_thickness == 0
-	mesh.y = SmoothMeshLines([0, MSL_width/2 + [-resolution/3, 2*resolution/3]/4, MSL_width/2+cpwg_gap-[-resolution/3, 2*resolution/3]/4], resolution/4 , 1.5);
+	fine_resolution = MSL_width;
+	mesh.y = SmoothMeshLines([0, MSL_width/2 + [-fine_resolution/3, 2*fine_resolution/3]/4, MSL_width/2+cpwg_gap-[-fine_resolution/3, 2*fine_resolution/3]/4], fine_resolution, 1.5);
 else
-	mesh.y = SmoothMeshLines([0, MSL_width/2, MSL_width/2+cpwg_gap], resolution/4 , 1.5);
+	mesh.y = [linspace(0, MSL_width/2, 4), linspace(MSL_width/2, MSL_width/2+cpwg_gap, 4)];
 end
+mesh.x = SmoothMeshLines([-MSL_length, -MSL_length/3, MSL_length/3, MSL_length, -MSL_length+via_spacing/2:via_spacing:MSL_length-via_spacing/2], resolution, 1.5);
 mesh.y = RecursiveSmoothMesh([-board_width, -via_distance/2, -mesh.y, mesh.y, via_distance/2, board_width], resolution, 1.5);
-mesh.z = RecursiveSmoothMesh([linspace(0,substrate_thickness,5), linspace(substrate_thickness, substrate_thickness + MSL_thickness, 5), 10*substrate_thickness], resolution, 1.5);
+mesh.z = SmoothMeshLines2([linspace(0,substrate_thickness,5), linspace(substrate_thickness, substrate_thickness + MSL_thickness, 5), 10*substrate_thickness], resolution, 1.5);
 CSX = DefineRectGrid(CSX, unit, mesh);
 
 % Substrate
-CSX = AddMaterial(CSX, 'RO4350B');
-CSX = SetMaterialProperty(CSX, 'RO4350B', 'Epsilon', substrate_er);
+CSX = AddDebyeMaterial(CSX, 'FR408HR');
+f = [1e9 10e9];
+tau = 1./(2*pi*f);
+[eps_delta, eps_inf] = simplified_debye_fit(3.68, 0.0092, 2.3e-12, f); % datasheet values for FR408HR
+CSX = SetMaterialProperty(CSX, 'FR408HR', 'Epsilon', eps_inf, 'EpsilonDelta_1', eps_delta(1), 'EpsilonDelta_2', eps_delta(2), 'EpsilonRelaxTime_1', tau(1), 'EpsilonRelaxTime_2', tau(2));
 start = [mesh.x(1),   mesh.y(1),   0];
 stop  = [mesh.x(end), mesh.y(end), substrate_thickness];
-CSX = AddBox(CSX, 'RO4350B', 0, start, stop);
+CSX = AddBox(CSX, 'FR408HR', 0, start, stop);
 
 % Top ground plane
 CSX = AddMetal(CSX, 'PEC');
@@ -68,7 +72,7 @@ end
 % MSL port
 portstart = [mesh.x(1), -MSL_width/2, substrate_thickness];
 portstop  = [0, MSL_width/2, 0];
-[CSX,port{1}] = AddThickMetalMSLPort(CSX, 100, 1, 'PEC', portstart, portstop, 0, [0 0 -1], 'ExcitePort', true, 'FeedShift', 10*resolution, 'MeasPlaneShift',  MSL_length/3, 'Thickness', MSL_thickness);
+[CSX,port{1}] = AddThickMetalMSLPort(CSX, 100, 1, 'PEC', portstart, portstop, 0, [0 0 -1], 'ExcitePort', true, 'FeedShift', mesh.x(10) - mesh.x(1), 'MeasPlaneShift',  MSL_length/3, 'Thickness', MSL_thickness);
 
 portstart = [mesh.x(end), -MSL_width/2, substrate_thickness];
 portstop  = [0, MSL_width/2, 0];
