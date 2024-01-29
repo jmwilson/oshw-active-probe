@@ -10,8 +10,8 @@ pgon(:, end+1) = [0;0.012175];
 pgon(:, end+1) = [0.0058;0.0104];
 pgon(:, end+1) = [0.013325;0.002875];
 pgon(:, end+1) = [0.013325;0];
-pgon(:, end+1) = [0.032;0];
-pgon(:, end+1) = [0.032;0.02];
+pgon(:, end+1) = [0.076;0];
+pgon(:, end+1) = [0.076;0.02];
 
 Adjust priority on top copper ground plane
 cutout = 180
