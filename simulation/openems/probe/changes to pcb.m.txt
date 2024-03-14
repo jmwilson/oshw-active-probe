@@ -1,21 +1,14 @@
-Change priority on ground_cutout to be > 200
-
 Fix board outline:
 pgon = [];
-pgon(:, end+1) = [0.007525;0.02];
-pgon(:, end+1) = [0.007525;0.01695];
-pgon(:, end+1) = [0.0058;0.01695];
-pgon(:, end+1) = [0;0.015175];
-pgon(:, end+1) = [0;0.012175];
-pgon(:, end+1) = [0.0058;0.0104];
-pgon(:, end+1) = [0.013325;0.002875];
-pgon(:, end+1) = [0.013325;0];
-pgon(:, end+1) = [0.076;0];
-pgon(:, end+1) = [0.076;0.02];
-
-Adjust priority on top copper ground plane
-cutout = 180
-pour preceding cutout = 150
+pgon(:, end+1) = [0.00605;0.02];
+pgon(:, end+1) = [0.00605;0.016775];
+pgon(:, end+1) = [0;0.014923];
+pgon(:, end+1) = [0;0.012077];
+pgon(:, end+1) = [0.00605;0.010225];
+pgon(:, end+1) = [0.013575;0.0027];
+pgon(:, end+1) = [0.013575;0];
+pgon(:, end+1) = [0.07445;0];
+pgon(:, end+1) = [0.07445;0.02];
 
 octave --no-gui preview.m
 octave --no-gui probe_input.m
