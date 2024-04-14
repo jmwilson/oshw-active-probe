@@ -45,15 +45,15 @@ $EXTMAX
   9
 $LIMMIN
  10
-0.9931888
+1.0538975
  20
 0.9959803
   9
 $LIMMAX
  10
-4.4563058
+4.2811089
  20
-2.1316932
+2.126732
   9
 $ORTHOMODE
  70
@@ -489,19 +489,19 @@ $SKPOLY
   9
 $TDCREATE
  40
-2460269.762064421
+2460414.752890637
   9
 $TDUCREATE
  40
-2460270.095397755
+2460415.044557303
   9
 $TDUPDATE
  40
-2460269.762065243
+2460414.752891528
   9
 $TDUUPDATE
  40
-2460270.095398576
+2460415.044558194
   9
 $TDINDWG
  40
@@ -549,7 +549,7 @@ $SPLINESEGS
   9
 $HANDSEED
   5
-166
+165
   9
 $SURFTAB1
  70
@@ -929,7 +929,7 @@ $PSTYLEMODE
   9
 $FINGERPRINTGUID
   2
-{088D73E3-9023-499C-BA1A-B09532498B07}
+{3257D04F-BC96-4473-B643-685131233C5B}
   9
 $VERSIONGUID
   2
@@ -1791,7 +1791,7 @@ AcDbBlockTableRecord
   0
 BLOCK_RECORD
   5
-79
+78
 330
 1
 100
@@ -1805,7 +1805,33 @@ MILL_MAX_0339_1
 102
 {BLKREFS
 331
+7B
+102
+}
+ 70
+     0
+280
+     1
+281
+     0
+  0
+BLOCK_RECORD
+  5
 7C
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+MILL_MAX_0339_2
+340
+0
+102
+{BLKREFS
+331
+7F
 102
 }
  70
@@ -1817,21 +1843,21 @@ MILL_MAX_0339_1
   0
 BLOCK_RECORD
   5
-7D
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-CAPC0805_2012_100_M_2
-340
-0
-102
-{BLKREFS
-331
 80
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+CAPC0402_1005_50_M_3
+340
+0
+102
+{BLKREFS
+331
+83
 102
 }
  70
@@ -1843,21 +1869,21 @@ CAPC0805_2012_100_M_2
   0
 BLOCK_RECORD
   5
-81
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-CAPC0805_2012_100_M_3
-340
-0
-102
-{BLKREFS
-331
 84
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+CAPC0402_1005_50_M_4
+340
+0
+102
+{BLKREFS
+331
+87
 102
 }
  70
@@ -1869,21 +1895,21 @@ CAPC0805_2012_100_M_3
   0
 BLOCK_RECORD
   5
-85
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-CAPC0805_2012_145_M_4
-340
-0
-102
-{BLKREFS
-331
 88
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+CAPC0805_2012_100_M_5
+340
+0
+102
+{BLKREFS
+331
+8B
 102
 }
  70
@@ -1895,21 +1921,21 @@ CAPC0805_2012_145_M_4
   0
 BLOCK_RECORD
   5
-89
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-RESC0603_1608__M_5
-340
-0
-102
-{BLKREFS
-331
 8C
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+CAPC0805_2012_100_M_6
+340
+0
+102
+{BLKREFS
+331
+8F
 102
 }
  70
@@ -1921,21 +1947,21 @@ RESC0603_1608__M_5
   0
 BLOCK_RECORD
   5
-8D
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-LED0603_1608__M_6
-340
-0
-102
-{BLKREFS
-331
 90
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+CAPC0805_2012_145_M_7
+340
+0
+102
+{BLKREFS
+331
+93
 102
 }
  70
@@ -1947,21 +1973,21 @@ LED0603_1608__M_6
   0
 BLOCK_RECORD
   5
-91
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-RESC0402_1005__M_7
-340
-0
-102
-{BLKREFS
-331
 94
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+RESC0603_1608__M_8
+340
+0
+102
+{BLKREFS
+331
+97
 102
 }
  70
@@ -1973,21 +1999,21 @@ RESC0402_1005__M_7
   0
 BLOCK_RECORD
   5
-95
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-RESC0402_1005__M_8
-340
-0
-102
-{BLKREFS
-331
 98
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+LED0603_1608__M_9
+340
+0
+102
+{BLKREFS
+331
+9B
 102
 }
  70
@@ -1999,21 +2025,21 @@ RESC0402_1005__M_8
   0
 BLOCK_RECORD
   5
-99
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-CAPC0402_1005_50_M_9
-340
-0
-102
-{BLKREFS
-331
 9C
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+PVG3A_10
+340
+0
+102
+{BLKREFS
+331
+9F
 102
 }
  70
@@ -2025,33 +2051,7 @@ CAPC0402_1005_50_M_9
   0
 BLOCK_RECORD
   5
-9D
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-CAPC0402_1005_50_M_10
-340
-0
-102
-{BLKREFS
-331
 A0
-102
-}
- 70
-     0
-280
-     1
-281
-     0
-  0
-BLOCK_RECORD
-  5
-A1
 330
 1
 100
@@ -2059,13 +2059,13 @@ AcDbSymbolTableRecord
 100
 AcDbBlockTableRecord
   2
-CAPC0402_1005_50_M_11
+RESC0402_1005__M_11
 340
 0
 102
 {BLKREFS
 331
-A4
+A3
 102
 }
  70
@@ -2077,7 +2077,7 @@ A4
   0
 BLOCK_RECORD
   5
-A5
+A4
 330
 1
 100
@@ -2091,7 +2091,33 @@ CAPC0402_1005_50_M_12
 102
 {BLKREFS
 331
+A7
+102
+}
+ 70
+     0
+280
+     1
+281
+     0
+  0
+BLOCK_RECORD
+  5
 A8
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+CAPC0402_1005_50_M_13
+340
+0
+102
+{BLKREFS
+331
+AB
 102
 }
  70
@@ -2103,21 +2129,21 @@ A8
   0
 BLOCK_RECORD
   5
-A9
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-INF_PG_SC59_M_13
-340
-0
-102
-{BLKREFS
-331
 AC
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+CAPC0402_1005_50_M_14
+340
+0
+102
+{BLKREFS
+331
+AF
 102
 }
  70
@@ -2129,21 +2155,21 @@ AC
   0
 BLOCK_RECORD
   5
-AD
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-CAPC1206_3216_170_M_14
-340
-0
-102
-{BLKREFS
-331
 B0
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+CAPC0402_1005_50_M_15
+340
+0
+102
+{BLKREFS
+331
+B3
 102
 }
  70
@@ -2155,21 +2181,21 @@ B0
   0
 BLOCK_RECORD
   5
-B1
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-CAPC1206_3216_170_M_15
-340
-0
-102
-{BLKREFS
-331
 B4
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+INF_PG_SC59_M_16
+340
+0
+102
+{BLKREFS
+331
+B7
 102
 }
  70
@@ -2181,21 +2207,21 @@ B4
   0
 BLOCK_RECORD
   5
-B5
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-RESC0402_1005__M_16
-340
-0
-102
-{BLKREFS
-331
 B8
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+CAPC0805_2012_100_M_17
+340
+0
+102
+{BLKREFS
+331
+BB
 102
 }
  70
@@ -2207,33 +2233,7 @@ B8
   0
 BLOCK_RECORD
   5
-B9
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-RESC0402_1005__M_17
-340
-0
-102
-{BLKREFS
-331
 BC
-102
-}
- 70
-     0
-280
-     1
-281
-     0
-  0
-BLOCK_RECORD
-  5
-BD
 330
 1
 100
@@ -2241,13 +2241,13 @@ AcDbSymbolTableRecord
 100
 AcDbBlockTableRecord
   2
-RESC0402_1005__M_18
+CAPC0805_2012_100_M_18
 340
 0
 102
 {BLKREFS
 331
-C0
+BF
 102
 }
  70
@@ -2259,7 +2259,7 @@ C0
   0
 BLOCK_RECORD
   5
-C1
+C0
 330
 1
 100
@@ -2273,7 +2273,33 @@ RESC0402_1005__M_19
 102
 {BLKREFS
 331
+C3
+102
+}
+ 70
+     0
+280
+     1
+281
+     0
+  0
+BLOCK_RECORD
+  5
 C4
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+RESC0402_1005__M_20
+340
+0
+102
+{BLKREFS
+331
+C7
 102
 }
  70
@@ -2285,33 +2311,7 @@ C4
   0
 BLOCK_RECORD
   5
-C5
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-MILL_MAX_0339_20
-340
-0
-102
-{BLKREFS
-331
 C8
-102
-}
- 70
-     0
-280
-     1
-281
-     0
-  0
-BLOCK_RECORD
-  5
-C9
 330
 1
 100
@@ -2319,13 +2319,13 @@ AcDbSymbolTableRecord
 100
 AcDbBlockTableRecord
   2
-CAPC0402_1005_50_M_21
+MILL_MAX_0339_21
 340
 0
 102
 {BLKREFS
 331
-CC
+CB
 102
 }
  70
@@ -2337,7 +2337,7 @@ CC
   0
 BLOCK_RECORD
   5
-CD
+CC
 330
 1
 100
@@ -2351,7 +2351,7 @@ CAPC0402_1005_50_M_22
 102
 {BLKREFS
 331
-D0
+CF
 102
 }
  70
@@ -2363,7 +2363,7 @@ D0
   0
 BLOCK_RECORD
   5
-D1
+D0
 330
 1
 100
@@ -2371,13 +2371,13 @@ AcDbSymbolTableRecord
 100
 AcDbBlockTableRecord
   2
-RESC0402_1005__M_23
+CAPC0402_1005_50_M_23
 340
 0
 102
 {BLKREFS
 331
-D4
+D3
 102
 }
  70
@@ -2389,7 +2389,7 @@ D4
   0
 BLOCK_RECORD
   5
-D5
+D4
 330
 1
 100
@@ -2403,7 +2403,33 @@ RESC0402_1005__M_24
 102
 {BLKREFS
 331
+D7
+102
+}
+ 70
+     0
+280
+     1
+281
+     0
+  0
+BLOCK_RECORD
+  5
 D8
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+RESC0402_1005__M_25
+340
+0
+102
+{BLKREFS
+331
+DB
 102
 }
  70
@@ -2415,21 +2441,21 @@ D8
   0
 BLOCK_RECORD
   5
-D9
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-DSC0010J_NV_25
-340
-0
-102
-{BLKREFS
-331
 DC
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+DSC0010J_NV_26
+340
+0
+102
+{BLKREFS
+331
+DF
 102
 }
  70
@@ -2441,33 +2467,7 @@ DC
   0
 BLOCK_RECORD
   5
-DD
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-MSOP_12_MSE_26
-340
-0
-102
-{BLKREFS
-331
 E0
-102
-}
- 70
-     0
-280
-     1
-281
-     0
-  0
-BLOCK_RECORD
-  5
-E1
 330
 1
 100
@@ -2475,13 +2475,13 @@ AcDbSymbolTableRecord
 100
 AcDbBlockTableRecord
   2
-RESC0402_1005__M_27
+MSOP_12_MSE_27
 340
 0
 102
 {BLKREFS
 331
-E4
+E3
 102
 }
  70
@@ -2493,7 +2493,7 @@ E4
   0
 BLOCK_RECORD
   5
-E5
+E4
 330
 1
 100
@@ -2507,7 +2507,7 @@ RESC0402_1005__M_28
 102
 {BLKREFS
 331
-E8
+E7
 102
 }
  70
@@ -2519,7 +2519,7 @@ E8
   0
 BLOCK_RECORD
   5
-E9
+E8
 330
 1
 100
@@ -2533,7 +2533,7 @@ RESC0402_1005__M_29
 102
 {BLKREFS
 331
-EC
+EB
 102
 }
  70
@@ -2545,7 +2545,7 @@ EC
   0
 BLOCK_RECORD
   5
-ED
+EC
 330
 1
 100
@@ -2559,7 +2559,33 @@ RESC0402_1005__M_30
 102
 {BLKREFS
 331
+EF
+102
+}
+ 70
+     0
+280
+     1
+281
+     0
+  0
+BLOCK_RECORD
+  5
 F0
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+RESC0402_1005__M_31
+340
+0
+102
+{BLKREFS
+331
+F3
 102
 }
  70
@@ -2571,33 +2597,7 @@ F0
   0
 BLOCK_RECORD
   5
-F1
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-CUI_PJ_002A_31
-340
-0
-102
-{BLKREFS
-331
 F4
-102
-}
- 70
-     0
-280
-     1
-281
-     0
-  0
-BLOCK_RECORD
-  5
-F5
 330
 1
 100
@@ -2605,13 +2605,13 @@ AcDbSymbolTableRecord
 100
 AcDbBlockTableRecord
   2
-CAPC0402_1005_50_M_32
+CUI_PJ_002A_32
 340
 0
 102
 {BLKREFS
 331
-F8
+F7
 102
 }
  70
@@ -2623,7 +2623,7 @@ F8
   0
 BLOCK_RECORD
   5
-F9
+F8
 330
 1
 100
@@ -2637,7 +2637,7 @@ CAPC0402_1005_50_M_33
 102
 {BLKREFS
 331
-FC
+FB
 102
 }
  70
@@ -2649,7 +2649,7 @@ FC
   0
 BLOCK_RECORD
   5
-FD
+FC
 330
 1
 100
@@ -2663,7 +2663,7 @@ CAPC0402_1005_50_M_34
 102
 {BLKREFS
 331
-100
+FF
 102
 }
  70
@@ -2675,7 +2675,7 @@ CAPC0402_1005_50_M_34
   0
 BLOCK_RECORD
   5
-101
+100
 330
 1
 100
@@ -2683,13 +2683,39 @@ AcDbSymbolTableRecord
 100
 AcDbBlockTableRecord
   2
-KEMET_D_M_35
+CAPC0402_1005_50_M_35
 340
 0
 102
 {BLKREFS
 331
+103
+102
+}
+ 70
+     0
+280
+     1
+281
+     0
+  0
+BLOCK_RECORD
+  5
 104
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+KEMET_B_M_36
+340
+0
+102
+{BLKREFS
+331
+107
 102
 }
  70
@@ -2701,33 +2727,7 @@ KEMET_D_M_35
   0
 BLOCK_RECORD
   5
-105
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-KEMET_D_M_36
-340
-0
-102
-{BLKREFS
-331
 108
-102
-}
- 70
-     0
-280
-     1
-281
-     0
-  0
-BLOCK_RECORD
-  5
-109
 330
 1
 100
@@ -2735,13 +2735,13 @@ AcDbSymbolTableRecord
 100
 AcDbBlockTableRecord
   2
-CAPC0603_1608_100_M_37
+KEMET_B_M_37
 340
 0
 102
 {BLKREFS
 331
-10C
+10B
 102
 }
  70
@@ -2753,7 +2753,7 @@ CAPC0603_1608_100_M_37
   0
 BLOCK_RECORD
   5
-10D
+10C
 330
 1
 100
@@ -2767,7 +2767,7 @@ CAPC0603_1608_100_M_38
 102
 {BLKREFS
 331
-110
+10F
 102
 }
  70
@@ -2779,7 +2779,7 @@ CAPC0603_1608_100_M_38
   0
 BLOCK_RECORD
   5
-111
+110
 330
 1
 100
@@ -2787,13 +2787,13 @@ AcDbSymbolTableRecord
 100
 AcDbBlockTableRecord
   2
-CAPC0306_M_39
+CAPC0603_1608_100_M_39
 340
 0
 102
 {BLKREFS
 331
-114
+113
 102
 }
  70
@@ -2805,7 +2805,7 @@ CAPC0306_M_39
   0
 BLOCK_RECORD
   5
-115
+114
 330
 1
 100
@@ -2819,7 +2819,7 @@ CAPC0306_M_40
 102
 {BLKREFS
 331
-118
+117
 102
 }
  70
@@ -2831,7 +2831,7 @@ CAPC0306_M_40
   0
 BLOCK_RECORD
   5
-119
+118
 330
 1
 100
@@ -2845,7 +2845,7 @@ CAPC0306_M_41
 102
 {BLKREFS
 331
-11C
+11B
 102
 }
  70
@@ -2857,7 +2857,7 @@ CAPC0306_M_41
   0
 BLOCK_RECORD
   5
-11D
+11C
 330
 1
 100
@@ -2871,7 +2871,33 @@ CAPC0306_M_42
 102
 {BLKREFS
 331
+11F
+102
+}
+ 70
+     0
+280
+     1
+281
+     0
+  0
+BLOCK_RECORD
+  5
 120
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+CAPC0306_M_43
+340
+0
+102
+{BLKREFS
+331
+123
 102
 }
  70
@@ -2883,21 +2909,21 @@ CAPC0306_M_42
   0
 BLOCK_RECORD
   5
-121
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-SOIC_8_43
-340
-0
-102
-{BLKREFS
-331
 124
+330
+1
+100
+AcDbSymbolTableRecord
+100
+AcDbBlockTableRecord
+  2
+SOIC_8_44
+340
+0
+102
+{BLKREFS
+331
+127
 102
 }
  70
@@ -2909,33 +2935,7 @@ SOIC_8_43
   0
 BLOCK_RECORD
   5
-125
-330
-1
-100
-AcDbSymbolTableRecord
-100
-AcDbBlockTableRecord
-  2
-VQFN16_RGT_TEX__OSHPARK_44
-340
-0
-102
-{BLKREFS
-331
 128
-102
-}
- 70
-     0
-280
-     1
-281
-     0
-  0
-BLOCK_RECORD
-  5
-129
 330
 1
 100
@@ -2943,13 +2943,13 @@ AcDbSymbolTableRecord
 100
 AcDbBlockTableRecord
   2
-RESC0402_1005__M_45
+VQFN16_RGT_TEX__OSHPARK_45
 340
 0
 102
 {BLKREFS
 331
-12C
+12B
 102
 }
  70
@@ -2961,7 +2961,7 @@ RESC0402_1005__M_45
   0
 BLOCK_RECORD
   5
-12D
+12C
 330
 1
 100
@@ -2975,7 +2975,7 @@ RESC0402_1005__M_46
 102
 {BLKREFS
 331
-130
+12F
 102
 }
  70
@@ -2987,7 +2987,7 @@ RESC0402_1005__M_46
   0
 BLOCK_RECORD
   5
-131
+130
 330
 1
 100
@@ -3001,7 +3001,7 @@ RESC0402_1005__M_47
 102
 {BLKREFS
 331
-134
+133
 102
 }
  70
@@ -3013,7 +3013,7 @@ RESC0402_1005__M_47
   0
 BLOCK_RECORD
   5
-135
+134
 330
 1
 100
@@ -3027,7 +3027,7 @@ RESC0402_1005__M_48
 102
 {BLKREFS
 331
-138
+137
 102
 }
  70
@@ -3039,7 +3039,7 @@ RESC0402_1005__M_48
   0
 BLOCK_RECORD
   5
-139
+138
 330
 1
 100
@@ -3053,7 +3053,7 @@ RESC0402_1005__M_49
 102
 {BLKREFS
 331
-13C
+13B
 102
 }
  70
@@ -3065,7 +3065,7 @@ RESC0402_1005__M_49
   0
 BLOCK_RECORD
   5
-13D
+13C
 330
 1
 100
@@ -3079,7 +3079,7 @@ RESC0402_1005__M_50
 102
 {BLKREFS
 331
-140
+13F
 102
 }
  70
@@ -3091,7 +3091,7 @@ RESC0402_1005__M_50
   0
 BLOCK_RECORD
   5
-141
+140
 330
 1
 100
@@ -3105,7 +3105,7 @@ RESC0402_1005__M_51
 102
 {BLKREFS
 331
-144
+143
 102
 }
  70
@@ -3117,7 +3117,7 @@ RESC0402_1005__M_51
   0
 BLOCK_RECORD
   5
-145
+144
 330
 1
 100
@@ -3131,7 +3131,7 @@ RESC0402_1005__M_52
 102
 {BLKREFS
 331
-148
+147
 102
 }
  70
@@ -3143,7 +3143,7 @@ RESC0402_1005__M_52
   0
 BLOCK_RECORD
   5
-149
+148
 330
 1
 100
@@ -3157,7 +3157,7 @@ RESC0402_1005__M_53
 102
 {BLKREFS
 331
-14C
+14B
 102
 }
  70
@@ -3169,7 +3169,7 @@ RESC0402_1005__M_53
   0
 BLOCK_RECORD
   5
-14D
+14C
 330
 1
 100
@@ -3183,7 +3183,7 @@ RESC0402_1005__M_54
 102
 {BLKREFS
 331
-150
+14F
 102
 }
  70
@@ -3195,7 +3195,7 @@ RESC0402_1005__M_54
   0
 BLOCK_RECORD
   5
-151
+150
 330
 1
 100
@@ -3203,13 +3203,13 @@ AcDbSymbolTableRecord
 100
 AcDbBlockTableRecord
   2
-MILL_MAX_0339_55
+RESC0402_1005__M_55
 340
 0
 102
 {BLKREFS
 331
-154
+153
 102
 }
  70
@@ -3221,7 +3221,7 @@ MILL_MAX_0339_55
   0
 BLOCK_RECORD
   5
-155
+154
 330
 1
 100
@@ -3235,7 +3235,7 @@ AcDbBlockTableRecord
 102
 {BLKREFS
 331
-158
+157
 102
 }
  70
@@ -3247,7 +3247,7 @@ AcDbBlockTableRecord
   0
 BLOCK_RECORD
   5
-159
+158
 330
 1
 100
@@ -3261,7 +3261,7 @@ CAPC0402_1005_50_M_57
 102
 {BLKREFS
 331
-15C
+15B
 102
 }
  70
@@ -3399,9 +3399,9 @@ AcDbBlockEnd
   0
 BLOCK
   5
-7A
-330
 79
+330
+78
 100
 AcDbEntity
   8
@@ -3425,9 +3425,9 @@ MILL_MAX_0339_1
   0
 ENDBLK
   5
-7B
+7A
 330
-79
+78
 100
 AcDbEntity
   8
@@ -3436,10 +3436,48 @@ AcDbEntity
 AcDbBlockEnd
   0
 BLOCK
+  5
+7D
+330
+7C
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockBegin
+  2
+MILL_MAX_0339_2
+ 70
+     0
+ 10
+0.0
+ 20
+0.0
+ 30
+0.0
+  3
+MILL_MAX_0339_2
+  1
+
+  0
+ENDBLK
   5
 7E
 330
-7D
+7C
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+81
+330
+80
 100
 AcDbEntity
   8
@@ -3447,7 +3485,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0805_2012_100_M_2
+CAPC0402_1005_50_M_3
  70
      0
  10
@@ -3457,27 +3495,27 @@ CAPC0805_2012_100_M_2
  30
 0.0
   3
-CAPC0805_2012_100_M_2
+CAPC0402_1005_50_M_3
   1
 
   0
 ENDBLK
-  5
-7F
-330
-7D
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 82
 330
-81
+80
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+85
+330
+84
 100
 AcDbEntity
   8
@@ -3485,7 +3523,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0805_2012_100_M_3
+CAPC0402_1005_50_M_4
  70
      0
  10
@@ -3495,27 +3533,27 @@ CAPC0805_2012_100_M_3
  30
 0.0
   3
-CAPC0805_2012_100_M_3
+CAPC0402_1005_50_M_4
   1
 
   0
 ENDBLK
-  5
-83
-330
-81
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 86
 330
-85
+84
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+89
+330
+88
 100
 AcDbEntity
   8
@@ -3523,7 +3561,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0805_2012_145_M_4
+CAPC0805_2012_100_M_5
  70
      0
  10
@@ -3533,27 +3571,27 @@ CAPC0805_2012_145_M_4
  30
 0.0
   3
-CAPC0805_2012_145_M_4
+CAPC0805_2012_100_M_5
   1
 
   0
 ENDBLK
-  5
-87
-330
-85
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 8A
 330
-89
+88
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+8D
+330
+8C
 100
 AcDbEntity
   8
@@ -3561,7 +3599,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0603_1608__M_5
+CAPC0805_2012_100_M_6
  70
      0
  10
@@ -3571,27 +3609,27 @@ RESC0603_1608__M_5
  30
 0.0
   3
-RESC0603_1608__M_5
+CAPC0805_2012_100_M_6
   1
 
   0
 ENDBLK
-  5
-8B
-330
-89
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 8E
 330
-8D
+8C
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+91
+330
+90
 100
 AcDbEntity
   8
@@ -3599,7 +3637,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-LED0603_1608__M_6
+CAPC0805_2012_145_M_7
  70
      0
  10
@@ -3609,27 +3647,27 @@ LED0603_1608__M_6
  30
 0.0
   3
-LED0603_1608__M_6
+CAPC0805_2012_145_M_7
   1
 
   0
 ENDBLK
-  5
-8F
-330
-8D
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 92
 330
-91
+90
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+95
+330
+94
 100
 AcDbEntity
   8
@@ -3637,7 +3675,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_7
+RESC0603_1608__M_8
  70
      0
  10
@@ -3647,27 +3685,27 @@ RESC0402_1005__M_7
  30
 0.0
   3
-RESC0402_1005__M_7
+RESC0603_1608__M_8
   1
 
   0
 ENDBLK
-  5
-93
-330
-91
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 96
 330
-95
+94
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+99
+330
+98
 100
 AcDbEntity
   8
@@ -3675,7 +3713,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_8
+LED0603_1608__M_9
  70
      0
  10
@@ -3685,27 +3723,27 @@ RESC0402_1005__M_8
  30
 0.0
   3
-RESC0402_1005__M_8
+LED0603_1608__M_9
   1
 
   0
 ENDBLK
-  5
-97
-330
-95
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 9A
 330
-99
+98
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+9D
+330
+9C
 100
 AcDbEntity
   8
@@ -3713,7 +3751,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0402_1005_50_M_9
+PVG3A_10
  70
      0
  10
@@ -3723,27 +3761,27 @@ CAPC0402_1005_50_M_9
  30
 0.0
   3
-CAPC0402_1005_50_M_9
+PVG3A_10
   1
 
   0
 ENDBLK
-  5
-9B
-330
-99
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 9E
 330
-9D
+9C
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+A1
+330
+A0
 100
 AcDbEntity
   8
@@ -3751,7 +3789,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0402_1005_50_M_10
+RESC0402_1005__M_11
  70
      0
  10
@@ -3761,27 +3799,27 @@ CAPC0402_1005_50_M_10
  30
 0.0
   3
-CAPC0402_1005_50_M_10
+RESC0402_1005__M_11
   1
 
   0
 ENDBLK
-  5
-9F
-330
-9D
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 A2
 330
-A1
+A0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+A5
+330
+A4
 100
 AcDbEntity
   8
@@ -3789,7 +3827,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0402_1005_50_M_11
+CAPC0402_1005_50_M_12
  70
      0
  10
@@ -3799,27 +3837,27 @@ CAPC0402_1005_50_M_11
  30
 0.0
   3
-CAPC0402_1005_50_M_11
+CAPC0402_1005_50_M_12
   1
 
   0
 ENDBLK
-  5
-A3
-330
-A1
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 A6
 330
-A5
+A4
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+A9
+330
+A8
 100
 AcDbEntity
   8
@@ -3827,7 +3865,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0402_1005_50_M_12
+CAPC0402_1005_50_M_13
  70
      0
  10
@@ -3837,27 +3875,27 @@ CAPC0402_1005_50_M_12
  30
 0.0
   3
-CAPC0402_1005_50_M_12
+CAPC0402_1005_50_M_13
   1
 
   0
 ENDBLK
-  5
-A7
-330
-A5
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 AA
 330
-A9
+A8
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+AD
+330
+AC
 100
 AcDbEntity
   8
@@ -3865,7 +3903,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-INF_PG_SC59_M_13
+CAPC0402_1005_50_M_14
  70
      0
  10
@@ -3875,27 +3913,27 @@ INF_PG_SC59_M_13
  30
 0.0
   3
-INF_PG_SC59_M_13
+CAPC0402_1005_50_M_14
   1
 
   0
 ENDBLK
-  5
-AB
-330
-A9
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 AE
 330
-AD
+AC
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+B1
+330
+B0
 100
 AcDbEntity
   8
@@ -3903,7 +3941,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC1206_3216_170_M_14
+CAPC0402_1005_50_M_15
  70
      0
  10
@@ -3913,27 +3951,27 @@ CAPC1206_3216_170_M_14
  30
 0.0
   3
-CAPC1206_3216_170_M_14
+CAPC0402_1005_50_M_15
   1
 
   0
 ENDBLK
-  5
-AF
-330
-AD
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 B2
 330
-B1
+B0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+B5
+330
+B4
 100
 AcDbEntity
   8
@@ -3941,7 +3979,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC1206_3216_170_M_15
+INF_PG_SC59_M_16
  70
      0
  10
@@ -3951,27 +3989,27 @@ CAPC1206_3216_170_M_15
  30
 0.0
   3
-CAPC1206_3216_170_M_15
+INF_PG_SC59_M_16
   1
 
   0
 ENDBLK
-  5
-B3
-330
-B1
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 B6
 330
-B5
+B4
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+B9
+330
+B8
 100
 AcDbEntity
   8
@@ -3979,7 +4017,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_16
+CAPC0805_2012_100_M_17
  70
      0
  10
@@ -3989,27 +4027,27 @@ RESC0402_1005__M_16
  30
 0.0
   3
-RESC0402_1005__M_16
+CAPC0805_2012_100_M_17
   1
 
   0
 ENDBLK
-  5
-B7
-330
-B5
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 BA
 330
-B9
+B8
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+BD
+330
+BC
 100
 AcDbEntity
   8
@@ -4017,7 +4055,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_17
+CAPC0805_2012_100_M_18
  70
      0
  10
@@ -4027,27 +4065,27 @@ RESC0402_1005__M_17
  30
 0.0
   3
-RESC0402_1005__M_17
+CAPC0805_2012_100_M_18
   1
 
   0
 ENDBLK
-  5
-BB
-330
-B9
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 BE
 330
-BD
+BC
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+C1
+330
+C0
 100
 AcDbEntity
   8
@@ -4055,7 +4093,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_18
+RESC0402_1005__M_19
  70
      0
  10
@@ -4065,27 +4103,27 @@ RESC0402_1005__M_18
  30
 0.0
   3
-RESC0402_1005__M_18
+RESC0402_1005__M_19
   1
 
   0
 ENDBLK
-  5
-BF
-330
-BD
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 C2
 330
-C1
+C0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+C5
+330
+C4
 100
 AcDbEntity
   8
@@ -4093,7 +4131,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_19
+RESC0402_1005__M_20
  70
      0
  10
@@ -4103,27 +4141,27 @@ RESC0402_1005__M_19
  30
 0.0
   3
-RESC0402_1005__M_19
+RESC0402_1005__M_20
   1
 
   0
 ENDBLK
-  5
-C3
-330
-C1
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 C6
 330
-C5
+C4
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+C9
+330
+C8
 100
 AcDbEntity
   8
@@ -4131,7 +4169,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-MILL_MAX_0339_20
+MILL_MAX_0339_21
  70
      0
  10
@@ -4141,27 +4179,27 @@ MILL_MAX_0339_20
  30
 0.0
   3
-MILL_MAX_0339_20
+MILL_MAX_0339_21
   1
 
   0
 ENDBLK
-  5
-C7
-330
-C5
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 CA
 330
-C9
+C8
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+CD
+330
+CC
 100
 AcDbEntity
   8
@@ -4169,7 +4207,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0402_1005_50_M_21
+CAPC0402_1005_50_M_22
  70
      0
  10
@@ -4179,27 +4217,27 @@ CAPC0402_1005_50_M_21
  30
 0.0
   3
-CAPC0402_1005_50_M_21
+CAPC0402_1005_50_M_22
   1
 
   0
 ENDBLK
-  5
-CB
-330
-C9
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 CE
 330
-CD
+CC
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+D1
+330
+D0
 100
 AcDbEntity
   8
@@ -4207,7 +4245,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0402_1005_50_M_22
+CAPC0402_1005_50_M_23
  70
      0
  10
@@ -4217,27 +4255,27 @@ CAPC0402_1005_50_M_22
  30
 0.0
   3
-CAPC0402_1005_50_M_22
+CAPC0402_1005_50_M_23
   1
 
   0
 ENDBLK
-  5
-CF
-330
-CD
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 D2
 330
-D1
+D0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+D5
+330
+D4
 100
 AcDbEntity
   8
@@ -4245,7 +4283,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_23
+RESC0402_1005__M_24
  70
      0
  10
@@ -4255,27 +4293,27 @@ RESC0402_1005__M_23
  30
 0.0
   3
-RESC0402_1005__M_23
+RESC0402_1005__M_24
   1
 
   0
 ENDBLK
-  5
-D3
-330
-D1
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 D6
 330
-D5
+D4
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+D9
+330
+D8
 100
 AcDbEntity
   8
@@ -4283,7 +4321,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_24
+RESC0402_1005__M_25
  70
      0
  10
@@ -4293,27 +4331,27 @@ RESC0402_1005__M_24
  30
 0.0
   3
-RESC0402_1005__M_24
+RESC0402_1005__M_25
   1
 
   0
 ENDBLK
-  5
-D7
-330
-D5
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 DA
 330
-D9
+D8
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+DD
+330
+DC
 100
 AcDbEntity
   8
@@ -4321,7 +4359,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-DSC0010J_NV_25
+DSC0010J_NV_26
  70
      0
  10
@@ -4331,27 +4369,27 @@ DSC0010J_NV_25
  30
 0.0
   3
-DSC0010J_NV_25
+DSC0010J_NV_26
   1
 
   0
 ENDBLK
-  5
-DB
-330
-D9
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 DE
 330
-DD
+DC
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+E1
+330
+E0
 100
 AcDbEntity
   8
@@ -4359,7 +4397,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-MSOP_12_MSE_26
+MSOP_12_MSE_27
  70
      0
  10
@@ -4369,27 +4407,27 @@ MSOP_12_MSE_26
  30
 0.0
   3
-MSOP_12_MSE_26
+MSOP_12_MSE_27
   1
 
   0
 ENDBLK
-  5
-DF
-330
-DD
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 E2
 330
-E1
+E0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+E5
+330
+E4
 100
 AcDbEntity
   8
@@ -4397,7 +4435,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_27
+RESC0402_1005__M_28
  70
      0
  10
@@ -4407,27 +4445,27 @@ RESC0402_1005__M_27
  30
 0.0
   3
-RESC0402_1005__M_27
+RESC0402_1005__M_28
   1
 
   0
 ENDBLK
-  5
-E3
-330
-E1
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 E6
 330
-E5
+E4
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+E9
+330
+E8
 100
 AcDbEntity
   8
@@ -4435,7 +4473,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_28
+RESC0402_1005__M_29
  70
      0
  10
@@ -4445,27 +4483,27 @@ RESC0402_1005__M_28
  30
 0.0
   3
-RESC0402_1005__M_28
+RESC0402_1005__M_29
   1
 
   0
 ENDBLK
-  5
-E7
-330
-E5
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 EA
 330
-E9
+E8
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+ED
+330
+EC
 100
 AcDbEntity
   8
@@ -4473,7 +4511,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_29
+RESC0402_1005__M_30
  70
      0
  10
@@ -4483,27 +4521,27 @@ RESC0402_1005__M_29
  30
 0.0
   3
-RESC0402_1005__M_29
+RESC0402_1005__M_30
   1
 
   0
 ENDBLK
-  5
-EB
-330
-E9
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 EE
 330
-ED
+EC
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+F1
+330
+F0
 100
 AcDbEntity
   8
@@ -4511,7 +4549,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_30
+RESC0402_1005__M_31
  70
      0
  10
@@ -4521,27 +4559,27 @@ RESC0402_1005__M_30
  30
 0.0
   3
-RESC0402_1005__M_30
+RESC0402_1005__M_31
   1
 
   0
 ENDBLK
-  5
-EF
-330
-ED
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 F2
 330
-F1
+F0
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+F5
+330
+F4
 100
 AcDbEntity
   8
@@ -4549,7 +4587,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CUI_PJ_002A_31
+CUI_PJ_002A_32
  70
      0
  10
@@ -4559,27 +4597,27 @@ CUI_PJ_002A_31
  30
 0.0
   3
-CUI_PJ_002A_31
+CUI_PJ_002A_32
   1
 
   0
 ENDBLK
-  5
-F3
-330
-F1
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 F6
 330
-F5
+F4
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+F9
+330
+F8
 100
 AcDbEntity
   8
@@ -4587,7 +4625,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0402_1005_50_M_32
+CAPC0402_1005_50_M_33
  70
      0
  10
@@ -4597,27 +4635,27 @@ CAPC0402_1005_50_M_32
  30
 0.0
   3
-CAPC0402_1005_50_M_32
+CAPC0402_1005_50_M_33
   1
 
   0
 ENDBLK
-  5
-F7
-330
-F5
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 FA
 330
-F9
+F8
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+FD
+330
+FC
 100
 AcDbEntity
   8
@@ -4625,7 +4663,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0402_1005_50_M_33
+CAPC0402_1005_50_M_34
  70
      0
  10
@@ -4635,27 +4673,27 @@ CAPC0402_1005_50_M_33
  30
 0.0
   3
-CAPC0402_1005_50_M_33
+CAPC0402_1005_50_M_34
   1
 
   0
 ENDBLK
-  5
-FB
-330
-F9
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 FE
 330
-FD
+FC
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+101
+330
+100
 100
 AcDbEntity
   8
@@ -4663,7 +4701,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0402_1005_50_M_34
+CAPC0402_1005_50_M_35
  70
      0
  10
@@ -4673,27 +4711,27 @@ CAPC0402_1005_50_M_34
  30
 0.0
   3
-CAPC0402_1005_50_M_34
+CAPC0402_1005_50_M_35
   1
 
   0
 ENDBLK
-  5
-FF
-330
-FD
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 102
 330
-101
+100
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+105
+330
+104
 100
 AcDbEntity
   8
@@ -4701,7 +4739,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-KEMET_D_M_35
+KEMET_B_M_36
  70
      0
  10
@@ -4711,27 +4749,27 @@ KEMET_D_M_35
  30
 0.0
   3
-KEMET_D_M_35
+KEMET_B_M_36
   1
 
   0
 ENDBLK
-  5
-103
-330
-101
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 106
 330
-105
+104
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+109
+330
+108
 100
 AcDbEntity
   8
@@ -4739,7 +4777,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-KEMET_D_M_36
+KEMET_B_M_37
  70
      0
  10
@@ -4749,27 +4787,27 @@ KEMET_D_M_36
  30
 0.0
   3
-KEMET_D_M_36
+KEMET_B_M_37
   1
 
   0
 ENDBLK
-  5
-107
-330
-105
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 10A
 330
-109
+108
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+10D
+330
+10C
 100
 AcDbEntity
   8
@@ -4777,7 +4815,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0603_1608_100_M_37
+CAPC0603_1608_100_M_38
  70
      0
  10
@@ -4787,27 +4825,27 @@ CAPC0603_1608_100_M_37
  30
 0.0
   3
-CAPC0603_1608_100_M_37
+CAPC0603_1608_100_M_38
   1
 
   0
 ENDBLK
-  5
-10B
-330
-109
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 10E
 330
-10D
+10C
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+111
+330
+110
 100
 AcDbEntity
   8
@@ -4815,7 +4853,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0603_1608_100_M_38
+CAPC0603_1608_100_M_39
  70
      0
  10
@@ -4825,27 +4863,27 @@ CAPC0603_1608_100_M_38
  30
 0.0
   3
-CAPC0603_1608_100_M_38
+CAPC0603_1608_100_M_39
   1
 
   0
 ENDBLK
-  5
-10F
-330
-10D
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 112
 330
-111
+110
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+115
+330
+114
 100
 AcDbEntity
   8
@@ -4853,7 +4891,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0306_M_39
+CAPC0306_M_40
  70
      0
  10
@@ -4863,27 +4901,27 @@ CAPC0306_M_39
  30
 0.0
   3
-CAPC0306_M_39
+CAPC0306_M_40
   1
 
   0
 ENDBLK
-  5
-113
-330
-111
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 116
 330
-115
+114
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+119
+330
+118
 100
 AcDbEntity
   8
@@ -4891,7 +4929,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0306_M_40
+CAPC0306_M_41
  70
      0
  10
@@ -4901,27 +4939,27 @@ CAPC0306_M_40
  30
 0.0
   3
-CAPC0306_M_40
+CAPC0306_M_41
   1
 
   0
 ENDBLK
-  5
-117
-330
-115
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 11A
 330
-119
+118
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+11D
+330
+11C
 100
 AcDbEntity
   8
@@ -4929,7 +4967,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0306_M_41
+CAPC0306_M_42
  70
      0
  10
@@ -4939,27 +4977,27 @@ CAPC0306_M_41
  30
 0.0
   3
-CAPC0306_M_41
+CAPC0306_M_42
   1
 
   0
 ENDBLK
-  5
-11B
-330
-119
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 11E
 330
-11D
+11C
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+121
+330
+120
 100
 AcDbEntity
   8
@@ -4967,7 +5005,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-CAPC0306_M_42
+CAPC0306_M_43
  70
      0
  10
@@ -4977,27 +5015,27 @@ CAPC0306_M_42
  30
 0.0
   3
-CAPC0306_M_42
+CAPC0306_M_43
   1
 
   0
 ENDBLK
-  5
-11F
-330
-11D
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 122
 330
-121
+120
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+125
+330
+124
 100
 AcDbEntity
   8
@@ -5005,7 +5043,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-SOIC_8_43
+SOIC_8_44
  70
      0
  10
@@ -5015,27 +5053,27 @@ SOIC_8_43
  30
 0.0
   3
-SOIC_8_43
+SOIC_8_44
   1
 
   0
 ENDBLK
-  5
-123
-330
-121
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 126
 330
-125
+124
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+129
+330
+128
 100
 AcDbEntity
   8
@@ -5043,7 +5081,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-VQFN16_RGT_TEX__OSHPARK_44
+VQFN16_RGT_TEX__OSHPARK_45
  70
      0
  10
@@ -5053,27 +5091,27 @@ VQFN16_RGT_TEX__OSHPARK_44
  30
 0.0
   3
-VQFN16_RGT_TEX__OSHPARK_44
+VQFN16_RGT_TEX__OSHPARK_45
   1
 
   0
 ENDBLK
-  5
-127
-330
-125
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 12A
 330
-129
+128
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+12D
+330
+12C
 100
 AcDbEntity
   8
@@ -5081,7 +5119,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_45
+RESC0402_1005__M_46
  70
      0
  10
@@ -5091,27 +5129,27 @@ RESC0402_1005__M_45
  30
 0.0
   3
-RESC0402_1005__M_45
+RESC0402_1005__M_46
   1
 
   0
 ENDBLK
-  5
-12B
-330
-129
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 12E
 330
-12D
+12C
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+131
+330
+130
 100
 AcDbEntity
   8
@@ -5119,7 +5157,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_46
+RESC0402_1005__M_47
  70
      0
  10
@@ -5129,27 +5167,27 @@ RESC0402_1005__M_46
  30
 0.0
   3
-RESC0402_1005__M_46
+RESC0402_1005__M_47
   1
 
   0
 ENDBLK
-  5
-12F
-330
-12D
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 132
 330
-131
+130
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+135
+330
+134
 100
 AcDbEntity
   8
@@ -5157,7 +5195,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_47
+RESC0402_1005__M_48
  70
      0
  10
@@ -5167,27 +5205,27 @@ RESC0402_1005__M_47
  30
 0.0
   3
-RESC0402_1005__M_47
+RESC0402_1005__M_48
   1
 
   0
 ENDBLK
-  5
-133
-330
-131
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 136
 330
-135
+134
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+139
+330
+138
 100
 AcDbEntity
   8
@@ -5195,7 +5233,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_48
+RESC0402_1005__M_49
  70
      0
  10
@@ -5205,27 +5243,27 @@ RESC0402_1005__M_48
  30
 0.0
   3
-RESC0402_1005__M_48
+RESC0402_1005__M_49
   1
 
   0
 ENDBLK
-  5
-137
-330
-135
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 13A
 330
-139
+138
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+13D
+330
+13C
 100
 AcDbEntity
   8
@@ -5233,7 +5271,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_49
+RESC0402_1005__M_50
  70
      0
  10
@@ -5243,27 +5281,27 @@ RESC0402_1005__M_49
  30
 0.0
   3
-RESC0402_1005__M_49
+RESC0402_1005__M_50
   1
 
   0
 ENDBLK
-  5
-13B
-330
-139
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 13E
 330
-13D
+13C
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+141
+330
+140
 100
 AcDbEntity
   8
@@ -5271,7 +5309,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_50
+RESC0402_1005__M_51
  70
      0
  10
@@ -5281,27 +5319,27 @@ RESC0402_1005__M_50
  30
 0.0
   3
-RESC0402_1005__M_50
+RESC0402_1005__M_51
   1
 
   0
 ENDBLK
-  5
-13F
-330
-13D
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 142
 330
-141
+140
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+145
+330
+144
 100
 AcDbEntity
   8
@@ -5309,7 +5347,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_51
+RESC0402_1005__M_52
  70
      0
  10
@@ -5319,27 +5357,27 @@ RESC0402_1005__M_51
  30
 0.0
   3
-RESC0402_1005__M_51
+RESC0402_1005__M_52
   1
 
   0
 ENDBLK
-  5
-143
-330
-141
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 146
 330
-145
+144
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+149
+330
+148
 100
 AcDbEntity
   8
@@ -5347,7 +5385,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_52
+RESC0402_1005__M_53
  70
      0
  10
@@ -5357,27 +5395,27 @@ RESC0402_1005__M_52
  30
 0.0
   3
-RESC0402_1005__M_52
+RESC0402_1005__M_53
   1
 
   0
 ENDBLK
-  5
-147
-330
-145
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 14A
 330
-149
+148
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+14D
+330
+14C
 100
 AcDbEntity
   8
@@ -5385,7 +5423,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_53
+RESC0402_1005__M_54
  70
      0
  10
@@ -5395,27 +5433,27 @@ RESC0402_1005__M_53
  30
 0.0
   3
-RESC0402_1005__M_53
+RESC0402_1005__M_54
   1
 
   0
 ENDBLK
-  5
-14B
-330
-149
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 14E
 330
-14D
+14C
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+151
+330
+150
 100
 AcDbEntity
   8
@@ -5423,7 +5461,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-RESC0402_1005__M_54
+RESC0402_1005__M_55
  70
      0
  10
@@ -5433,27 +5471,27 @@ RESC0402_1005__M_54
  30
 0.0
   3
-RESC0402_1005__M_54
+RESC0402_1005__M_55
   1
 
   0
 ENDBLK
-  5
-14F
-330
-14D
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 152
 330
-151
+150
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockEnd
+  0
+BLOCK
+  5
+155
+330
+154
 100
 AcDbEntity
   8
@@ -5461,7 +5499,7 @@ AcDbEntity
 100
 AcDbBlockBegin
   2
-MILL_MAX_0339_55
+901_10511_3_56
  70
      0
  10
@@ -5471,53 +5509,15 @@ MILL_MAX_0339_55
  30
 0.0
   3
-MILL_MAX_0339_55
+901_10511_3_56
   1
 
   0
 ENDBLK
-  5
-153
-330
-151
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockEnd
-  0
-BLOCK
   5
 156
 330
-155
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockBegin
-  2
-901_10511_3_56
- 70
-     0
- 10
-0.0
- 20
-0.0
- 30
-0.0
-  3
-901_10511_3_56
-  1
-
-  0
-ENDBLK
-  5
-157
-330
-155
+154
 100
 AcDbEntity
   8
@@ -5527,9 +5527,9 @@ AcDbBlockEnd
   0
 BLOCK
   5
-15A
-330
 159
+330
+158
 100
 AcDbEntity
   8
@@ -5553,9 +5553,9 @@ CAPC0402_1005_50_M_57
   0
 ENDBLK
   5
-15B
+15A
 330
-159
+158
 100
 AcDbEntity
   8
@@ -5581,15 +5581,15 @@ Mechanical1
 100
 AcDbLine
  10
-1.2362205
+1.3070866
  20
-1.606299
+1.5994092
  30
 0.0
  11
-1.5324801
+1.6033462
  21
-1.3100394
+1.3031496
  31
 0.0
   0
@@ -5605,15 +5605,15 @@ Mechanical1
 100
 AcDbLine
  10
-1.2362203
+1.3070865
  20
-1.8641732
+1.8572835
  30
 0.0
  11
-1.3041337
+1.3070865
  21
-1.8641732
+1.9842519
  31
 0.0
   0
@@ -5629,15 +5629,15 @@ Mechanical1
 100
 AcDbLine
  10
-1.3041337
+1.6033462
  20
-1.8641732
+1.1968504
  30
 0.0
  11
-1.3041337
+1.6033462
  21
-1.9842519
+1.3031496
  31
 0.0
   0
@@ -5653,15 +5653,15 @@ Mechanical1
 100
 AcDbLine
  10
-1.5324801
+1.0688975
  20
-1.1968504
+1.6723033
  30
 0.0
  11
-1.5324801
+1.3070866
  21
-1.3100394
+1.5994092
  31
 0.0
   0
@@ -5677,15 +5677,15 @@ Mechanical1
 100
 AcDbLine
  10
-1.0078739
+1.0688975
  20
-1.676181
+1.7843893
  30
 0.0
  11
-1.2362205
+1.3070864
  21
-1.606299
+1.8572833
  31
 0.0
   0
@@ -5701,15 +5701,15 @@ Mechanical1
 100
 AcDbLine
  10
-1.0078739
+1.0688975
  20
-1.7942912
+1.6723033
  30
 0.0
  11
-1.2362203
+1.0688975
  21
-1.8641731
+1.7843893
  31
 0.0
   0
@@ -5725,15 +5725,15 @@ Mechanical1
 100
 AcDbLine
  10
-1.0078739
+1.3070865
  20
-1.676181
+1.9842518
  30
 0.0
  11
-1.0078739
+3.824803
  21
-1.7942912
+1.984252
  31
 0.0
   0
@@ -5749,15 +5749,15 @@ Mechanical1
 100
 AcDbLine
  10
-1.3041337
+1.6033463
  20
-1.9842518
+1.1968508
  30
 0.0
  11
-3.9999999
+3.824803
  21
-1.984252
+1.1968504
  31
 0.0
   0
@@ -5773,37 +5773,13 @@ Mechanical1
 100
 AcDbLine
  10
-1.5324801
- 20
-1.1968508
- 30
-0.0
- 11
-3.9999999
- 21
-1.1968504
- 31
-0.0
-  0
-LINE
-  5
-78
-330
-1F
-100
-AcDbEntity
-  8
-Mechanical1
-100
-AcDbLine
- 10
-3.9999999
+3.824803
  20
 1.1968504
  30
 0.0
  11
-3.9999999
+3.824803
  21
 1.984252
  31
@@ -5811,7 +5787,7 @@ AcDbLine
   0
 INSERT
   5
-7C
+7B
 330
 1F
 100
@@ -5823,9 +5799,9 @@ AcDbBlockReference
   2
 MILL_MAX_0339_1
  10
-1.3035432
+1.0688975
  20
-1.9242126
+1.7283468
  30
 0.0
  50
@@ -5833,7 +5809,7 @@ MILL_MAX_0339_1
   0
 INSERT
   5
-80
+7F
 330
 1F
 100
@@ -5843,19 +5819,19 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-CAPC0805_2012_100_M_2
+MILL_MAX_0339_2
  10
-3.1249999
+1.3070865
  20
-1.3110236
+1.9242514
  30
 0.0
  50
-180.0
+360.0
   0
 INSERT
   5
-84
+83
 330
 1F
 100
@@ -5865,19 +5841,19 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-CAPC0805_2012_100_M_3
+CAPC0402_1005_50_M_3
  10
-3.1072833
+1.4232282
  20
-1.6614173
+1.7283468
  30
 0.0
  50
-180.0
+90.0
   0
 INSERT
   5
-88
+87
 330
 1F
 100
@@ -5887,11 +5863,11 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-CAPC0805_2012_145_M_4
+CAPC0402_1005_50_M_4
  10
-3.2942912
+1.3799211
  20
-1.4862205
+1.7283468
  30
 0.0
  50
@@ -5899,7 +5875,7 @@ CAPC0805_2012_145_M_4
   0
 INSERT
   5
-8C
+8B
 330
 1F
 100
@@ -5909,11 +5885,11 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-RESC0603_1608__M_5
+CAPC0805_2012_100_M_5
  10
-2.0610234
+2.9685037
  20
-1.9143701
+1.3031495
  30
 0.0
  50
@@ -5921,7 +5897,7 @@ RESC0603_1608__M_5
   0
 INSERT
   5
-90
+8F
 330
 1F
 100
@@ -5931,11 +5907,77 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-LED0603_1608__M_6
+CAPC0805_2012_100_M_6
+ 10
+2.9685037
+ 20
+1.6535432
+ 30
+0.0
+ 50
+180.0
+  0
+INSERT
+  5
+93
+330
+1F
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+CAPC0805_2012_145_M_7
+ 10
+3.1190943
+ 20
+1.4783465
+ 30
+0.0
+ 50
+270.0
+  0
+INSERT
+  5
+97
+330
+1F
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+RESC0603_1608__M_8
+ 10
+2.0610234
+ 20
+1.8946851
+ 30
+0.0
+ 50
+180.0
+  0
+INSERT
+  5
+9B
+330
+1F
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+LED0603_1608__M_9
  10
 1.9311022
  20
-1.9143701
+1.8946851
  30
 0.0
  50
@@ -5943,7 +5985,7 @@ LED0603_1608__M_6
   0
 INSERT
   5
-94
+9F
 330
 1F
 100
@@ -5953,19 +5995,19 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-RESC0402_1005__M_7
+PVG3A_10
  10
-1.9409448
+2.1102361
  20
-1.702756
+1.6692913
  30
 0.0
  50
-360.0
+90.0
   0
 INSERT
   5
-98
+A3
 330
 1F
 100
@@ -5975,7 +6017,7 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-RESC0402_1005__M_8
+RESC0402_1005__M_11
  10
 1.8622046
  20
@@ -5987,73 +6029,7 @@ RESC0402_1005__M_8
   0
 INSERT
   5
-9C
-330
-1F
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockReference
-  2
-CAPC0402_1005_50_M_9
- 10
-1.7440944
- 20
-1.6358268
- 30
-0.0
- 50
-180.0
-  0
-INSERT
-  5
-A0
-330
-1F
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockReference
-  2
-CAPC0402_1005_50_M_10
- 10
-1.5767715
- 20
-1.8208661
- 30
-0.0
- 50
-180.0
-  0
-INSERT
-  5
-A4
-330
-1F
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockReference
-  2
-CAPC0402_1005_50_M_11
- 10
-1.5767715
- 20
-1.6358268
- 30
-0.0
- 50
-360.0
-  0
-INSERT
-  5
-A8
+A7
 330
 1F
 100
@@ -6067,15 +6043,15 @@ CAPC0402_1005_50_M_12
  10
 1.7440944
  20
-1.8208661
+1.6358268
  30
 0.0
  50
-360.0
+180.0
   0
 INSERT
   5
-AC
+AB
 330
 1F
 100
@@ -6085,9 +6061,75 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-INF_PG_SC59_M_13
+CAPC0402_1005_50_M_13
  10
-3.3326771
+1.5767715
+ 20
+1.8208662
+ 30
+0.0
+ 50
+180.0
+  0
+INSERT
+  5
+AF
+330
+1F
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+CAPC0402_1005_50_M_14
+ 10
+1.5767715
+ 20
+1.6358268
+ 30
+0.0
+ 50
+360.0
+  0
+INSERT
+  5
+B3
+330
+1F
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+CAPC0402_1005_50_M_15
+ 10
+1.7440944
+ 20
+1.8208661
+ 30
+0.0
+ 50
+360.0
+  0
+INSERT
+  5
+B7
+330
+1F
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+INF_PG_SC59_M_16
+ 10
+3.1574802
  20
 1.6614173
  30
@@ -6097,7 +6139,7 @@ INF_PG_SC59_M_13
   0
 INSERT
   5
-B0
+BB
 330
 1F
 100
@@ -6107,11 +6149,11 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-CAPC1206_3216_170_M_14
+CAPC0805_2012_100_M_17
  10
-2.7903544
+2.5433069
  20
-1.3169291
+1.3759842
  30
 0.0
  50
@@ -6119,7 +6161,7 @@ CAPC1206_3216_170_M_14
   0
 INSERT
   5
-B4
+BF
 330
 1F
 100
@@ -6129,11 +6171,11 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-CAPC1206_3216_170_M_15
+CAPC0805_2012_100_M_18
  10
-2.7903541
+2.5433069
  20
-1.5728346
+1.6200786
  30
 0.0
  50
@@ -6141,73 +6183,7 @@ CAPC1206_3216_170_M_15
   0
 INSERT
   5
-B8
-330
-1F
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockReference
-  2
-RESC0402_1005__M_16
- 10
-1.3395668
- 20
-1.6633858
- 30
-0.0
- 50
-180.0
-  0
-INSERT
-  5
-BC
-330
-1F
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockReference
-  2
-RESC0402_1005__M_17
- 10
-1.4183069
- 20
-1.6633858
- 30
-0.0
- 50
-180.0
-  0
-INSERT
-  5
-C0
-330
-1F
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockReference
-  2
-RESC0402_1005__M_18
- 10
-1.2610235
- 20
-1.7499999
- 30
-0.0
- 50
-360.0
-  0
-INSERT
-  5
-C4
+C3
 330
 1F
 100
@@ -6219,6 +6195,28 @@ AcDbBlockReference
   2
 RESC0402_1005__M_19
  10
+1.2933069
+ 20
+1.7283468
+ 30
+0.0
+ 50
+90.0
+  0
+INSERT
+  5
+C7
+330
+1F
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+RESC0402_1005__M_20
+ 10
 1.6377952
  20
 1.8543307
@@ -6229,7 +6227,7 @@ RESC0402_1005__M_19
   0
 INSERT
   5
-C8
+CB
 330
 1F
 100
@@ -6239,9 +6237,9 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-MILL_MAX_0339_20
+MILL_MAX_0339_21
  10
-1.5324802
+1.6033463
  20
 1.2539369
  30
@@ -6251,29 +6249,7 @@ MILL_MAX_0339_20
   0
 INSERT
   5
-CC
-330
-1F
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockReference
-  2
-CAPC0402_1005_50_M_21
- 10
-1.9409448
- 20
-1.6594489
- 30
-0.0
- 50
-360.0
-  0
-INSERT
-  5
-D0
+CF
 330
 1F
 100
@@ -6285,6 +6261,28 @@ AcDbBlockReference
   2
 CAPC0402_1005_50_M_22
  10
+1.9409448
+ 20
+1.6594489
+ 30
+0.0
+ 50
+360.0
+  0
+INSERT
+  5
+D3
+330
+1F
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+CAPC0402_1005_50_M_23
+ 10
 1.8622046
  20
 1.6594489
@@ -6295,29 +6293,7 @@ CAPC0402_1005_50_M_22
   0
 INSERT
   5
-D4
-330
-1F
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockReference
-  2
-RESC0402_1005__M_23
- 10
-1.7834645
- 20
-1.7027558
- 30
-0.0
- 50
-180.0
-  0
-INSERT
-  5
-D8
+D7
 330
 1F
 100
@@ -6331,6 +6307,28 @@ RESC0402_1005__M_24
  10
 1.7834645
  20
+1.7027558
+ 30
+0.0
+ 50
+180.0
+  0
+INSERT
+  5
+DB
+330
+1F
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+RESC0402_1005__M_25
+ 10
+1.7834645
+ 20
 1.4291339
  30
 0.0
@@ -6339,7 +6337,7 @@ RESC0402_1005__M_24
   0
 INSERT
   5
-DC
+DF
 330
 1F
 100
@@ -6349,11 +6347,11 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-DSC0010J_NV_25
+DSC0010J_NV_26
  10
-2.8533465
+2.5531494
  20
-1.444882
+1.4980314
  30
 0.0
  50
@@ -6361,7 +6359,7 @@ DSC0010J_NV_25
   0
 INSERT
   5
-E0
+E3
 330
 1F
 100
@@ -6371,11 +6369,11 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-MSOP_12_MSE_26
+MSOP_12_MSE_27
  10
-3.1515747
+2.9763778
  20
-1.4862205
+1.4783465
  30
 0.0
  50
@@ -6383,29 +6381,7 @@ MSOP_12_MSE_26
   0
 INSERT
   5
-E4
-330
-1F
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockReference
-  2
-RESC0402_1005__M_27
- 10
-3.0383858
- 20
-1.4921262
- 30
-0.0
- 50
-90.0
-  0
-INSERT
-  5
-E8
+E7
 330
 1F
 100
@@ -6417,17 +6393,17 @@ AcDbBlockReference
   2
 RESC0402_1005__M_28
  10
-2.9950788
+2.7381887
  20
-1.4921259
+1.5452756
  30
 0.0
  50
-270.0
+90.0
   0
 INSERT
   5
-EC
+EB
 330
 1F
 100
@@ -6439,9 +6415,9 @@ AcDbBlockReference
   2
 RESC0402_1005__M_29
  10
-2.9950788
+2.6948817
  20
-1.3976379
+1.5452753
  30
 0.0
  50
@@ -6449,7 +6425,7 @@ RESC0402_1005__M_29
   0
 INSERT
   5
-F0
+EF
 330
 1F
 100
@@ -6461,17 +6437,17 @@ AcDbBlockReference
   2
 RESC0402_1005__M_30
  10
-3.0383858
+2.6948817
  20
-1.4133859
+1.4507873
  30
 0.0
  50
-90.0
+270.0
   0
 INSERT
   5
-F4
+F3
 330
 1F
 100
@@ -6481,9 +6457,31 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-CUI_PJ_002A_31
+RESC0402_1005__M_31
  10
-3.4409448
+2.7381887
+ 20
+1.4665353
+ 30
+0.0
+ 50
+90.0
+  0
+INSERT
+  5
+F7
+330
+1F
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+CUI_PJ_002A_32
+ 10
+3.2657479
  20
 1.3937008
  30
@@ -6493,29 +6491,7 @@ CUI_PJ_002A_31
   0
 INSERT
   5
-F8
-330
-1F
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockReference
-  2
-CAPC0402_1005_50_M_32
- 10
-2.7369095
- 20
-1.4360237
- 30
-0.0
- 50
-180.0
-  0
-INSERT
-  5
-FC
+FB
 330
 1F
 100
@@ -6527,17 +6503,17 @@ AcDbBlockReference
   2
 CAPC0402_1005_50_M_33
  10
-2.9517717
+2.4367124
  20
-1.397638
+1.4980314
  30
 0.0
  50
-270.0
+180.0
   0
 INSERT
   5
-100
+FF
 330
 1F
 100
@@ -6549,17 +6525,17 @@ AcDbBlockReference
   2
 CAPC0402_1005_50_M_34
  10
-2.9517717
+2.6515746
  20
-1.492126
+1.4507874
  30
 0.0
  50
-90.0
+270.0
   0
 INSERT
   5
-104
+103
 330
 1F
 100
@@ -6569,11 +6545,11 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-KEMET_D_M_35
+CAPC0402_1005_50_M_35
  10
-2.562992
+2.6515746
  20
-1.4970473
+1.5452754
  30
 0.0
  50
@@ -6581,7 +6557,7 @@ KEMET_D_M_35
   0
 INSERT
   5
-108
+107
 330
 1F
 100
@@ -6591,19 +6567,19 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-KEMET_D_M_36
+KEMET_B_M_36
  10
-2.3425196
+2.7559053
  20
-1.4970472
+1.3326771
  30
 0.0
  50
-90.0
+360.0
   0
 INSERT
   5
-10C
+10B
 330
 1F
 100
@@ -6613,11 +6589,11 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-CAPC0603_1608_100_M_37
+KEMET_B_M_37
  10
-1.9094487
+2.7559053
  20
-1.3061025
+1.6633857
  30
 0.0
  50
@@ -6625,7 +6601,7 @@ CAPC0603_1608_100_M_37
   0
 INSERT
   5
-110
+10F
 330
 1F
 100
@@ -6637,6 +6613,28 @@ AcDbBlockReference
   2
 CAPC0603_1608_100_M_38
  10
+1.9094487
+ 20
+1.3061025
+ 30
+0.0
+ 50
+180.0
+  0
+INSERT
+  5
+113
+330
+1F
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+CAPC0603_1608_100_M_39
+ 10
 2.1604329
  20
 1.4852363
@@ -6647,27 +6645,7 @@ CAPC0603_1608_100_M_38
   0
 INSERT
   5
-114
-330
-1F
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockReference
-  2
-CAPC0306_M_39
- 10
-1.57874
- 20
-1.5708661
- 30
-0.0
-  0
-INSERT
-  5
-118
+117
 330
 1F
 100
@@ -6679,17 +6657,15 @@ AcDbBlockReference
   2
 CAPC0306_M_40
  10
-1.7421259
+1.57874
  20
 1.5708661
  30
 0.0
- 50
-180.0
   0
 INSERT
   5
-11C
+11B
 330
 1F
 100
@@ -6703,13 +6679,15 @@ CAPC0306_M_41
  10
 1.7421259
  20
-1.8858268
+1.5708661
  30
 0.0
+ 50
+180.0
   0
 INSERT
   5
-120
+11F
 330
 1F
 100
@@ -6721,17 +6699,15 @@ AcDbBlockReference
   2
 CAPC0306_M_42
  10
-1.57874
+1.7421259
  20
 1.8858268
  30
 0.0
- 50
-180.0
   0
 INSERT
   5
-124
+123
 330
 1F
 100
@@ -6741,7 +6717,29 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-SOIC_8_43
+CAPC0306_M_43
+ 10
+1.57874
+ 20
+1.8858269
+ 30
+0.0
+ 50
+180.0
+  0
+INSERT
+  5
+127
+330
+1F
+100
+AcDbEntity
+  8
+0
+100
+AcDbBlockReference
+  2
+SOIC_8_44
  10
 1.9714566
  20
@@ -6751,7 +6749,7 @@ SOIC_8_43
   0
 INSERT
   5
-128
+12B
 330
 1F
 100
@@ -6761,7 +6759,7 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-VQFN16_RGT_TEX__OSHPARK_44
+VQFN16_RGT_TEX__OSHPARK_45
  10
 1.6594487
  20
@@ -6771,29 +6769,7 @@ VQFN16_RGT_TEX__OSHPARK_44
   0
 INSERT
   5
-12C
-330
-1F
-100
-AcDbEntity
-  8
-0
-100
-AcDbBlockReference
-  2
-RESC0402_1005__M_45
- 10
-1.6811022
- 20
-1.8543307
- 30
-0.0
- 50
-90.0
-  0
-INSERT
-  5
-130
+12F
 330
 1F
 100
@@ -6805,17 +6781,17 @@ AcDbBlockReference
   2
 RESC0402_1005__M_46
  10
-1.7834645
+1.6811022
  20
-1.7460629
+1.8543307
  30
 0.0
  50
-360.0
+90.0
   0
 INSERT
   5
-134
+133
 330
 1F
 100
@@ -6827,9 +6803,9 @@ AcDbBlockReference
   2
 RESC0402_1005__M_47
  10
-1.535433
+1.7834645
  20
-1.7066928
+1.7460629
  30
 0.0
  50
@@ -6837,7 +6813,7 @@ RESC0402_1005__M_47
   0
 INSERT
   5
-138
+137
 330
 1F
 100
@@ -6849,9 +6825,9 @@ AcDbBlockReference
   2
 RESC0402_1005__M_48
  10
-1.6692912
+1.5531494
  20
-1.6040353
+1.7283468
  30
 0.0
  50
@@ -6859,7 +6835,7 @@ RESC0402_1005__M_48
   0
 INSERT
   5
-13C
+13B
 330
 1F
 100
@@ -6871,17 +6847,17 @@ AcDbBlockReference
   2
 RESC0402_1005__M_49
  10
-1.9015747
+1.6692912
  20
-1.6161418
+1.6040353
  30
 0.0
  50
-180.0
+270.0
   0
 INSERT
   5
-140
+13F
 330
 1F
 100
@@ -6893,9 +6869,9 @@ AcDbBlockReference
   2
 RESC0402_1005__M_50
  10
-1.7047243
+1.9015747
  20
-1.4291339
+1.6161418
  30
 0.0
  50
@@ -6903,7 +6879,7 @@ RESC0402_1005__M_50
   0
 INSERT
   5
-144
+143
 330
 1F
 100
@@ -6915,9 +6891,9 @@ AcDbBlockReference
   2
 RESC0402_1005__M_51
  10
-1.3395668
+1.7834645
  20
-1.7066928
+1.3858268
  30
 0.0
  50
@@ -6925,7 +6901,7 @@ RESC0402_1005__M_51
   0
 INSERT
   5
-148
+147
 330
 1F
 100
@@ -6937,17 +6913,17 @@ AcDbBlockReference
   2
 RESC0402_1005__M_52
  10
-1.4183266
+1.336614
  20
-1.7066928
+1.7283468
  30
 0.0
  50
-360.0
+270.0
   0
 INSERT
   5
-14C
+14B
 330
 1F
 100
@@ -6959,17 +6935,17 @@ AcDbBlockReference
   2
 RESC0402_1005__M_53
  10
-1.3395668
+1.4015746
  20
-1.7499999
+1.8326775
  30
 0.0
  50
-360.0
+180.0
   0
 INSERT
   5
-150
+14F
 330
 1F
 100
@@ -6981,15 +6957,17 @@ AcDbBlockReference
   2
 RESC0402_1005__M_54
  10
-1.4974408
+1.4015746
  20
-1.7499999
+1.7893704
  30
 0.0
+ 50
+360.0
   0
 INSERT
   5
-154
+153
 330
 1F
 100
@@ -6999,19 +6977,19 @@ AcDbEntity
 100
 AcDbBlockReference
   2
-MILL_MAX_0339_55
+RESC0402_1005__M_55
  10
-1.0081888
+1.5098424
  20
-1.7352361
+1.7283468
  30
 0.0
  50
-360.0
+90.0
   0
 INSERT
   5
-158
+157
 330
 1F
 100
@@ -7023,7 +7001,7 @@ AcDbBlockReference
   2
 901_10511_3_56
  10
-3.9999999
+3.824803
  20
 1.7992126
  30
@@ -7033,7 +7011,7 @@ AcDbBlockReference
   0
 INSERT
   5
-15C
+15B
 330
 1F
 100
@@ -7045,13 +7023,13 @@ AcDbBlockReference
   2
 CAPC0402_1005_50_M_57
  10
-1.4183266
+1.4665353
  20
-1.7499999
+1.7283468
  30
 0.0
  50
-360.0
+270.0
   0
 ENDSEC
   0
@@ -7071,7 +7049,7 @@ AcDbDictionary
   3
 ACAD_DETAILVIEWSTYLE
 350
-164
+163
   3
 ACAD_GROUP
 350
@@ -7107,7 +7085,7 @@ ACAD_SCALELIST
   3
 ACAD_SECTIONVIEWSTYLE
 350
-165
+164
   3
 ACAD_TABLESTYLE
 350
@@ -7119,11 +7097,11 @@ ACAD_VISUALSTYLE
   3
 ACDB_RECOMPOSE_DATA
 350
-161
+160
   3
 AcDbVariableDictionary
 350
-15D
+15C
   0
 SUN
   5
@@ -7159,7 +7137,7 @@ AcDbSun
   0
 DICTIONARY
   5
-164
+163
 102
 {ACAD_REACTORS
 330
@@ -7475,7 +7453,7 @@ D2
   0
 DICTIONARY
   5
-165
+164
 102
 {ACAD_REACTORS
 330
@@ -7623,7 +7601,7 @@ X-Ray
   0
 XRECORD
   5
-161
+160
 102
 {ACAD_REACTORS
 330
@@ -7643,7 +7621,7 @@ AcDbXrecord
   0
 DICTIONARY
   5
-15D
+15C
 102
 {ACAD_REACTORS
 330
@@ -7659,15 +7637,15 @@ AcDbDictionary
   3
 CANNOSCALE
 350
-15E
+15D
   3
 CMLEADERSTYLE
 350
-163
+162
   3
 CTABLESTYLE
 350
-162
+161
   0
 LAYOUT
   5
@@ -8015,13 +7993,13 @@ Model
  71
      0
  10
-0.9931888
+1.0538975
  20
 0.9959803
  11
-4.4563058
+4.2811089
  21
-2.1316932
+2.126732
  12
 0.0
  22
@@ -9089,7 +9067,7 @@ TABLESTYLE
 102
 {ACAD_XDICTIONARY
 360
-15F
+15E
 102
 }
 330
@@ -15567,15 +15545,15 @@ strokes_ogs.tif
   0
 DICTIONARYVAR
   5
-15E
+15D
 102
 {ACAD_REACTORS
 330
-15D
+15C
 102
 }
 330
-15D
+15C
 100
 DictionaryVariables
 280
@@ -15585,15 +15563,15 @@ DictionaryVariables
   0
 DICTIONARYVAR
   5
-163
+162
 102
 {ACAD_REACTORS
 330
-15D
+15C
 102
 }
 330
-15D
+15C
 100
 DictionaryVariables
 280
@@ -15603,15 +15581,15 @@ Standard
   0
 DICTIONARYVAR
   5
-162
+161
 102
 {ACAD_REACTORS
 330
-15D
+15C
 102
 }
 330
-15D
+15C
 100
 DictionaryVariables
 280
@@ -15621,7 +15599,7 @@ Standard
   0
 DICTIONARY
   5
-15F
+15E
 330
 6A
 100
@@ -15633,19 +15611,19 @@ AcDbDictionary
   3
 ACAD_ROUNDTRIP_2008_TABLESTYLE_CELLSTYLEMAP
 360
-160
+15F
   0
 CELLSTYLEMAP
   5
-160
+15F
 102
 {ACAD_REACTORS
 330
-15F
+15E
 102
 }
 330
-15F
+15E
 100
 AcDbCellStyleMap
  90
