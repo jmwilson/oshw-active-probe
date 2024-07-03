@@ -194,7 +194,7 @@ end
 % calculate position of the current probes
 try
 	idx = interp1( mesh{idx_width}, 1:numel(mesh{idx_width}), nstart(idx_width), 'nearest' );
-	i1_start(idx_width)  = mesh{idx_width}(idx) - diff(mesh{idx_width}(idx-1:idx))/2;
+	i1_start(idx_width)  = mesh{idx_width}(idx-1) - diff(mesh{idx_width}(idx-2:idx-1))/2;
 	idx = interp1( mesh{idx_height}, 1:numel(mesh{idx_height}), start(idx_height), 'nearest' );
 	i1_start(idx_height) = mesh{idx_height}(idx-1) - diff(mesh{idx_height}(idx-2:idx-1))/2;
 	idx = interp1( mesh{idx_height}, 1:numel(mesh{idx_height}), start(idx_height) + height_direction*thickness, 'nearest' );
@@ -202,7 +202,7 @@ try
 	i1_start(idx_prop)   = sum(meshlines(1:2))/2;
 	i1_stop(idx_prop)    = i1_start(idx_prop);
 	idx = interp1( mesh{idx_width}, 1:numel(mesh{idx_width}), nstop(idx_width), 'nearest' );
-	i1_stop(idx_width)   = mesh{idx_width}(idx) + diff(mesh{idx_width}(idx:idx+1))/2;
+	i1_stop(idx_width)   = mesh{idx_width}(idx+1) + diff(mesh{idx_width}(idx+1:idx+2))/2;
 	i2_start = i1_start;
 	i2_stop  = i1_stop;
 	i2_start(idx_prop)   = sum(meshlines(2:3))/2;
